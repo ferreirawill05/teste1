@@ -1,0 +1,26 @@
+body{
+    background-color: #CCCCCC;
+}
+
+.box-sizing{
+    width: 35%;
+    height: 80%;
+}
+
+.form-sizing{
+    width: 85%; 
+    height: 50%;
+}
+
+.box{
+    background-color: white;
+}
+
+.input-sizing{
+    width: 20rem;
+}
+
+.button{
+    height: 40px;
+    width: 130px;
+}

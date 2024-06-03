@@ -1,0 +1,41 @@
+body{
+    background-color: #CCCCCC;
+}
+
+.box-sizing{
+    width: 35%;
+    height: 85%;
+}
+
+.form-sizing{
+    width: 280px;
+    height: 18rem;
+}
+
+.box{
+    background-color: white;
+}
+
+.check-input{
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.check-input input{
+    width: 15px;
+}
+
+label{
+    margin-right: auto;
+    font-size: 15px;
+}
+
+.button{
+    height: 40px;
+    width: 130px;
+}
+
+.input-sizing{
+    width: 20rem;
+}

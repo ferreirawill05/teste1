@@ -1,0 +1,52 @@
+*{
+    margin: auto;
+    padding: 0;
+}
+
+body{
+    background-color: #CCCCCC;
+}
+
+.box-filtro{
+    background-color: white;
+    width: 85%;
+    height: 200px;
+}
+
+.input-sizing{
+    width: 480px;
+    margin-top: 1rem;
+}
+
+.h1{
+    margin-left: 1rem;
+    margin-bottom: 70px;
+}
+
+.intro{
+    height: 10rem;
+}
+
+.register-button{
+    margin-top: 6rem;
+    margin-right: 98px;
+}
+
+.filter-button{
+    width: 330px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+    margin-left: 30px;
+}
+
+.style{
+    background-color: black;
+    color: white;
+    height: 56px;
+}
+
+.mat-table {
+    min-width: 81%;
+}

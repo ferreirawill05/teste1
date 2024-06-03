@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: Poppins;
+    box-sizing: border-box;
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Poppins;}
+
+a:hover{
+    cursor: pointer;
+}
+
+.background{
+    background-color: #CCCCCC !important;
+  }
+  
+.input-background{
+background-color: #D2D1D1;
+}
+  
+.black-button{
+    background-color: black;
+}

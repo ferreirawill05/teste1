@@ -1,0 +1,20 @@
+*{
+    margin: auto;
+    padding: 0;
+}
+
+.header{
+    background-color: #474848;
+    height: 12%;
+}
+
+.font{
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.hover-link:hover{
+    border-bottom: white solid 1px;
+    cursor: pointer;
+}

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Mac.MadeInCotia.Entities/1.0.0": {
+        "runtime": {
+          "Mac.MadeInCotia.Entities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Mac.MadeInCotia.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

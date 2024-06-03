@@ -1,0 +1,81 @@
+﻿using Mac.MadeInCotia.Entities.Telefones;
+using MAC.MadeInCotia.Biz.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Mac.MadeInCotia.Api.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class TelefonesController : ControllerBase
+    {
+        private readonly TelefoneService _telefoneService;
+
+        public TelefonesController(TelefoneService telefoneService)
+        {
+            _telefoneService = telefoneService;
+        }
+
+        [HttpGet("id")]
+        public IActionResult GetById(int id)
+        {
+            var colaboradorTelefone = _telefoneService.ConsultaPorId(id);
+            {
+                if (colaboradorTelefone == null)
+                { 
+                    return NotFound();
+                }
+
+                return Ok(colaboradorTelefone);
+            }
+        }
+
+
+        [HttpGet("TelefoneTodos")]
+        public IActionResult GetAllPhones()
+        {
+            var colaboradorTelefone = _telefoneService.ConsultaTodos();
+            {
+                if (colaboradorTelefone == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(colaboradorTelefone);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult CreatePhone (TelefonesInputModel telefone)
+        {
+            TelefonesInputModel colaboradorTelefone = _telefoneService.CriarTelefone(telefone);
+            if (colaboradorTelefone == null)
+            {
+                return BadRequest();
+            }
+            return Ok(telefone);
+        }
+
+        [HttpDelete]
+        public IActionResult DeletePhone(TelefonesInputModel telefone) 
+        {
+            TelefonesInputModel colaboradorTelefone = _telefoneService.DeletarTelefone(telefone);
+            if (colaboradorTelefone == null)
+            {
+                return BadRequest();
+            }
+            return Ok(telefone);
+        }
+
+        [HttpPut]
+        public IActionResult UpdatePhone(TelefonesInputModel telefone)
+        {
+            TelefonesInputModel colaboradorTelefone = _telefoneService.AtuaizarTelefone(telefone);
+            if (colaboradorTelefone == null)
+            {
+                return BadRequest();
+            }
+            return Ok(telefone);
+        }
+    }
+
+}  
