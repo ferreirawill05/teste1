@@ -9,6 +9,7 @@ import { ListaFiltros } from 'src/app/interfaces/ListaFiltros';
 import { ColaboradorService } from 'src/app/services/Colaborador/colaborador-service.service';
 
 
+
 @Component({
   selector: 'app-lista-funcionarios',
   templateUrl: './lista-funcionarios.component.html',
@@ -54,7 +55,7 @@ permissaoCadastrar : boolean = false
     }
     console.log(pagina);
 
-    this.service.ListarColaboradores(pagina).pipe.takeUntil().subscribe({
+    this.service.ListarColaboradores(pagina).subscribe({
       next: (resposta : ColaboradorListado) => {
         this.colaboradores = resposta.colaboradores
         console.log(this.colaboradores);

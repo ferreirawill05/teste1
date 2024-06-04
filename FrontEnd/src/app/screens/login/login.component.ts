@@ -48,20 +48,20 @@ export class LoginComponent implements OnInit {
 
       lembrar ? localStorage.setItem('usuario', usuario) : localStorage.clear()
 
-      this.service.Logar(usuario, senha).pipe(takeUntil(this.unSubscribe$)).subscribe({
-          next: (res) => {
+      // this.service.Logar(usuario, senha).subscribe({
+      //     next: (res) => {
 
-            localStorage.setItem("token", res.token)
-            this.router.navigate(['/home'])
-            this.loading = false
-          },
-          error: () => {
-            this.loading = false
-            this.msgErro = true
-            this.pushMessage()
-          }
-        }
-      )
+      //       localStorage.setItem("token", res.token)
+      //       this.router.navigate(['/home'])
+      //       this.loading = false
+      //     },
+      //     error: () => {
+      //       this.loading = false
+      //       this.msgErro = true
+      //       this.pushMessage()
+      //     }
+      //   }
+      // )
     }
 
     pushMessage(){

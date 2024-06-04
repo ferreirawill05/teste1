@@ -12,6 +12,7 @@ import { TelefoneServiceService } from 'src/app/services/Telefone/telefone-servi
 export class CadastrarColaboradorComponent implements OnInit{
 
 displayedColumns: string[] = ['apelido', 'telefone', 'tipoContato']
+otherDisplayedColumns: string[] = ['email', 'tipoContato']
 Colaboradores! : Telefone[]
 dataSource! : MatTableDataSource<ColaboradorCadastro>
 
@@ -21,10 +22,7 @@ constructor(
 ){}
 
 ngOnInit(): void {
-    this.ListandoTelefones()
+  
 }
 
-ListandoTelefones(){
-   
-}
 }

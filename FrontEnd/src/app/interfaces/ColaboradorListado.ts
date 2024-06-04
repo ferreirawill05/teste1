@@ -11,6 +11,5 @@ nsCriacao:         string | null;
 
 export interface ColaboradorListado {
 colaboradores : Colaboradores[];
-numero : number
+numero : number 
 }
-  

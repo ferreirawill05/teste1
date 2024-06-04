@@ -42,11 +42,14 @@ body{
 }
 
 .style{
-    background-color: black;
-    color: white;
-    height: 56px;
+    color: black;
 }
 
 .mat-table {
     min-width: 81%;
+}
+
+:host{
+  width: 20rem;
+  height: 10rem;
 }

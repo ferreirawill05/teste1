@@ -17,6 +17,7 @@ import { HeaderComponent } from './screens/comp/header/header.component';
 import { RouterModule, Routes } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
 import { DetalhesColaboradorComponent } from './screens/detalhes-colaborador/detalhes-colaborador.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +26,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DoubleMsgComponent } from './screens/comp/double-msg/double-msg.component';
 import { MsgErrorComponent } from './screens/comp/msg-error/msg-error.component';
+
+
 
 
 
@@ -69,7 +72,8 @@ const routes : Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

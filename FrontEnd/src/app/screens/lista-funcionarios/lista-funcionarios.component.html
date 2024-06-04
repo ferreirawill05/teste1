@@ -10,21 +10,21 @@
         <div class="d-flex w-100">
             <div class="d-flex flex-row align-items-center">
                 <mat-form-field class="input-sizing">
-                    <input matInput placeholder="Busca por Período - DD/MM/YYYY à DD/MM/AAAA" type="text" class="">
+                  <mat-date-range-input [rangePicker]="picker">
+                    <input matStartDate placeholder="DD/MM/YYYY">
+                    <input matEndDate placeholder="DD/MM/AAAA">
+                  </mat-date-range-input>
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-date-range-picker #picker></mat-date-range-picker>
                 </mat-form-field>
-                <!-- <mat-form-field>
-                    <mat-label>DD/MM/YYYY à DD/MM/AAAA</mat-label>
-                    <input matInput [matDatepicker]="picker">
-                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field> -->
-                <mat-icon class="style rounded" aria-hidden="false" aria-label="add icon" fontIcon="calendar_month"></mat-icon>
             </div>
             <div>
                 <mat-form-field class="input-sizing">
-                        <input matInput placeholder="Busca por nome, cpf, e-mail, telefone ou criador" type="text" class="">
+                  <input matInput placeholder="Busca por nome, cpf, e-mail, telefone ou criador" type="text" class="">
+                  <button type="submit">
+                    <span class="material-icons">search</span>
+                  </button>
                 </mat-form-field>
-                <mat-icon class="style rounded" aria-label="search icon" fontIcon="search"></mat-icon>
             </div>
 
         </div>
