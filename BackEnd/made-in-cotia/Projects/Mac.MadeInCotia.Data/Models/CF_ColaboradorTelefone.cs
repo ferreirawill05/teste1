@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mac.MadeInCotia.Data.Models
 {
@@ -22,6 +23,7 @@ namespace Mac.MadeInCotia.Data.Models
 
         [Key]
         public int Id_Telefone { get; set; }
+        [ForeignKey("CF_Colaborador")]
         public int Id_Colaborador { get; set; }
         public string Nm_Apelido { get; set; } = null!;
         public string Ds_Numero { get; set; } = null!;
@@ -30,7 +32,7 @@ namespace Mac.MadeInCotia.Data.Models
         public DateTime? Dt_Criacao { get; set; }
         public DateTime? Dt_UltAlteracao { get; set; }
         public string Ds_UltAlteracao { get; set; }
-
+        public virtual CF_Colaborador CF_Colaborador { get; set; } = null!;
 
     }
 }

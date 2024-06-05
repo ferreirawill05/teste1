@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mac.MadeInCotia.Data.Models
 {
@@ -22,6 +23,7 @@ namespace Mac.MadeInCotia.Data.Models
 
         [Key]
         public int Id_Colaborador { get; set; }
+        [ForeignKey("CF_ColaboradorTipoUsuario")]
         public int Id_TipoUsuario { get; set; }
         public string Nm_Nome { get; set; }
         public string Ds_Cpf { get; set; } 
@@ -31,8 +33,8 @@ namespace Mac.MadeInCotia.Data.Models
         public DateTime? Dt_Criacao { get; set; }
         public DateTime? Dt_UltAlteracao { get; set; }
         public string? Ds_UltAlteracao { get; set; }
-
-
+        public virtual CF_ColaboradorTipoUsuario CF_ColaboradorTipoUsuario { get; set; }
+        public virtual ICollection<CF_ColaboradorEmail> CF_ColaboradorEmail { get; set; }
+        public virtual ICollection<CF_ColaboradorTelefone> CF_ColaboradorTelefone { get; set; }
     }
 } 
-     

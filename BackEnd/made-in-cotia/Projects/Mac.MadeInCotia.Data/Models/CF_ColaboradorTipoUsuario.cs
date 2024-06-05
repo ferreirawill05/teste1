@@ -11,6 +11,7 @@ namespace Mac.MadeInCotia.Data.Models
         public DateTime Dt_Criacao { get; set; }
         public DateTime? Dt_UltAlteracao { get; set; }
         public string? Ds_UltAlteracao { get; set; }
-      
+        public virtual ICollection<CF_Colaborador> CF_Colaborador { get; set; }
+
     }
 }

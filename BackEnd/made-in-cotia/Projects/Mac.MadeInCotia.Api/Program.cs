@@ -41,6 +41,11 @@ public class Program
         builder.Services.AddScoped<ColaboradorService>();
         builder.Services.AddScoped<LoginService>();
 
+        builder.Services.AddControllers().AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+            options.JsonSerializerOptions.WriteIndented = true;
+        });
 
         // Database context
         builder.Services.AddDbContext<MacMadeInCotiaContext>(options =>
@@ -52,6 +57,8 @@ public class Program
         {
             app.UseExceptionHandler("/Error");
         }
+
+
 
         app.UseSwagger();
         app.UseSwaggerUI(c =>

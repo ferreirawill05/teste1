@@ -112,7 +112,7 @@ namespace MAC.MadeInCotia.Biz.Services
             return colaborador;
         }
 
-        
+
 
         public ColaboradorAlterarSenhaViewModel AtualizarSenha(ColaboradorAlterarSenhaViewModel colaborador)
         {
@@ -130,7 +130,7 @@ namespace MAC.MadeInCotia.Biz.Services
             return colaborador;
         }
 
-        public ColaboradorViewModel AtualizarSenha(ColaboradorViewModel colaborador)
+        /*public ColaboradorViewModel AtualizarSenha(ColaboradorViewModel colaborador)
         {
             var colaboradorBanco = _context.CF_Colaborador.Find(colaborador.Senha);
             if (colaboradorBanco == null) throw new ArgumentException("Error");
@@ -141,7 +141,7 @@ namespace MAC.MadeInCotia.Biz.Services
             _context.SaveChanges();
 
             return colaborador;
-        }
+        }*/
 
         // Método gerar TOKEN
 
@@ -167,6 +167,8 @@ namespace MAC.MadeInCotia.Biz.Services
         }
 
         //----------------------------------
+
+        /*Filtrar por Email*/
 
         public IEnumerable<EmailsViewModel> ConsultaPorEmail(string email)
         {
@@ -208,6 +210,7 @@ namespace MAC.MadeInCotia.Biz.Services
             }
         }
 
+        /*Filtrar por período*/
 
         public IEnumerable<ColaboradorViewModel> BuscarPorPeriodo(DateTime firstDate, DateTime lastDate)
         {
@@ -251,38 +254,23 @@ namespace MAC.MadeInCotia.Biz.Services
 
         //Filtro geral
 
-        /*public List<ColaboradorAlterarSenhaViewModel> SearchUsers(ColaboradorViewModel colaboradorFiltro)
+        public IEnumerable<CF_Colaborador> SearchUsers(ColaboradorFiltroGeral colaboradorFiltro )
         {
-            IQueryable<CF_Colaborador> query = _context.Set<CF_Colaborador>();
+              IQueryable<CF_Colaborador> query = _context.Set<CF_Colaborador>()
+                                                            .Include(user => user.CF_ColaboradorEmail)
+                                                            .Include(user => user.CF_ColaboradorTelefone);
 
-            if (!string.IsNullOrEmpty(colaboradorFiltro.Id))
+
+            if (!string.IsNullOrEmpty(colaboradorFiltro.Busca))
             {
-                int userId = (colaboradorFiltro.IdColaborador);
-                query = query.Where(user => user.IdColaborador == userId);
+                query = query.Where(user => user.Nm_Usuario.Contains(colaboradorFiltro.Busca) ||
+                                            user.Ds_Cpf.Contains(colaboradorFiltro.Busca) ||
+                                            user.CF_ColaboradorEmail.Any(e => e.Ds_Email.Contains(colaboradorFiltro.Busca)) ||
+                                            user.CF_ColaboradorTelefone.Any(t => t.Ds_Numero.Contains(colaboradorFiltro.Busca)));
             }
 
-            if (!string.IsNullOrEmpty(colaboradorFiltro.Nome))
-            {
-                query = query.Where(user => EF.Functions.Like(user.Nm_Usuario, $"%{colaboradorFiltro.Nome}%"));
-            }
-
-            if (!string.IsNullOrEmpty(colaboradorFiltro.Email))
-            {
-                query = query.Where(user => EF.Functions.Like(user.Email, $"%{colaboradorFiltro.Email}%"));
-            }
-
-            if (!string.IsNullOrEmpty(colaboradorFiltro.Telephone))
-            {
-                query = query.Where(user => EF.Functions.Like(user.Telefone, $"%{colaboradorFiltro.Telephone}%"));
-            }
-
-            return query.Select(user => new ColaboradorViewModel
-            {
-                Nome = user.Nome,
-                Email = user.Email,
-
-            }).ToList();
-        }*/
+            return query.ToList();
+        }
     }
      
 }

@@ -22,5 +22,6 @@ namespace Mac.MadeInCotia.Data.Models
         public string Nm_Permissao { get; set; } = null!;
         public bool? Fl_Ativo { get; set; }
         public DateTime? Dt_Criacao { get; set; }
+        public virtual ICollection<DF_ColaboradorPermissao> CfColaboradorPermissao { get; set; } = new List<DF_ColaboradorPermissao>();
     }
 }

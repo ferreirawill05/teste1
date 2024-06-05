@@ -70,9 +70,9 @@ namespace Mac.MadeInCotia.Api.Controllers
         }
 
         [HttpPut("/atualizarSenha")]
-        public IActionResult UpdatePassword(ColaboradorAlterarSenhaViewModel senha)
+        public IActionResult UpdatePassword(ColaboradorAlterarSenhaViewModel colaborador)
         {
-            ColaboradorAlterarSenhaViewModel senhaUsuario = _colaboradorService.AtualizarSenha(senha);
+            ColaboradorAlterarSenhaViewModel senhaUsuario = _colaboradorService.AtualizarSenha(colaborador);
             return Ok(senhaUsuario);
         }
 
@@ -116,7 +116,21 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(usuario);
         }
 
+        /*Filtro Geral*/
 
+        [HttpPost("/filtroGeral")]
+        public IActionResult FilterAll(ColaboradorFiltroGeral colaborador)
+        {
+
+            var usuarios = _colaboradorService.SearchUsers(colaborador);
+
+            if (usuarios == null || !usuarios.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(usuarios);
+        }
 
     }
 }
