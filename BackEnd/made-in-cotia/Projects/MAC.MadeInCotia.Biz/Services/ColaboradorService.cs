@@ -145,26 +145,6 @@ namespace MAC.MadeInCotia.Biz.Services
 
         // Método gerar TOKEN
 
-        public static string GerarToken(CF_Colaborador user)
-        {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("MIC@willjwt");
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new[]
-                {
-                    new Claim(ClaimTypes.Name, user.Nm_Nome),
-                    new Claim("IdColaborador", user.Id_Colaborador.ToString()),
-                    new Claim("IdPermissaoColaborador", user.Id_TipoUsuario.ToString())
-                }),
-                Expires = DateTime.UtcNow.AddHours(8),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
-            };
-
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
-        }
 
         //----------------------------------
 

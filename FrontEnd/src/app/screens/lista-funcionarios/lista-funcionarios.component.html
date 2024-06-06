@@ -1,12 +1,12 @@
 <app-header></app-header>
 <main>
     <div class="intro d-flex w-100 flex-row justify-content-between">
-        <h1 class="ms-5 mb-5 fs-2 p-4">Lista de Colaboradores</h1>
+        <h1 class="h1 mb-5 fs-2 p-4">Lista de Colaboradores</h1>
         <button routerLink="/cadastroColaborador" class="register-button" mat-flat-button color="primary">Cadastrar
             <mat-icon color="" aria-hidden="false" aria-label="add icon" fontIcon="add"></mat-icon>
         </button>
     </div>
-    <div class="container-xl bg-white d-flex flex-column rounded">
+    <div class="col-10 bg-white d-flex flex-column rounded">
         <div class="d-flex w-100">
             <div class="d-flex flex-row align-items-center">
                 <mat-form-field class="input-sizing">
@@ -20,10 +20,12 @@
             </div>
             <div>
                 <mat-form-field class="input-sizing">
-                  <input matInput placeholder="Busca por nome, cpf, e-mail, telefone ou criador" type="text" class="">
-                  <button type="submit">
-                    <span class="material-icons">search</span>
-                  </button>
+                  <div class="d-flex flex-row align-items-center">
+                    <input matInput placeholder="Busca por nome, cpf, e-mail, telefone ou criador" type="text" class="">
+                    <button class="search" type="submit">
+                      <span class="material-icons">search</span>
+                    </button>
+                  </div>
                 </mat-form-field>
             </div>
 

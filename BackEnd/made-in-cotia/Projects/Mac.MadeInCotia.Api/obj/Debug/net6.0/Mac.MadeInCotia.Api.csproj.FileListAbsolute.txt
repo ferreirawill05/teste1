@@ -150,3 +150,4 @@ C:\Users\williamf\Desktop\madeincotia\BackEnd\made-in-cotia\Projects\Mac.MadeInC
 C:\Users\williamf\Desktop\madeincotia\BackEnd\made-in-cotia\Projects\Mac.MadeInCotia.Api\obj\Debug\net6.0\Mac.MadeInCotia.Api.pdb
 C:\Users\williamf\Desktop\madeincotia\BackEnd\made-in-cotia\Projects\Mac.MadeInCotia.Api\obj\Debug\net6.0\Mac.MadeInCotia.Api.genruntimeconfig.cache
 C:\Users\williamf\Desktop\madeincotia\BackEnd\made-in-cotia\Projects\Mac.MadeInCotia.Api\obj\Debug\net6.0\ref\Mac.MadeInCotia.Api.dll
+C:\Users\williamf\Desktop\madeincotia\BackEnd\made-in-cotia\Projects\Mac.MadeInCotia.Api\bin\Debug\net6.0\FluentValidation.dll

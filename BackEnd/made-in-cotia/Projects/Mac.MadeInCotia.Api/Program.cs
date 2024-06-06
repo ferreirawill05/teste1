@@ -12,7 +12,7 @@ public class Program
     {
         //This line creates a WebApplicationBuilder instance, initializing it with default configurations including configuration sources like appsettings.json and appsettings.
         var builder = WebApplication.CreateBuilder(args);
-        var key = Encoding.ASCII.GetBytes("MIC@willjwt");
+        var key = Encoding.ASCII.GetBytes("MIC@TokenAutenticacaoWill@123MIC@TokenAutenticacaoWill@123");
 
         builder.Services.AddAuthentication(options =>
         {

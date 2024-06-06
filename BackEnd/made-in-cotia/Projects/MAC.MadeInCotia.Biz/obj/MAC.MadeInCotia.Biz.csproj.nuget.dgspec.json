@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[2.1.35, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.1, )"
+            },
             "Mac.Common.Util.Core": {
               "target": "Package",
               "version": "[2.1.2, )"

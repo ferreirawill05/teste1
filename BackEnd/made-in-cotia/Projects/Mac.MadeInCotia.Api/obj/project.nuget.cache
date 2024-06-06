@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "A+TAp4FfkIS1GwgELhLyCay7gJcwkIYsnHztAMBvaBjbt7uFsoUn8DZgd+MwKpL00tGt8vT9yS6sRs6rZDHPHA==",
+  "dgSpecHash": "rXexZBlhlFsOP+npa5JxsFCm3Synnh0jTJuIY5kLmhhFf31FZUJPu54PgotFjzY2Ca7mCGTClvrApgGYsqRtfw==",
   "success": true,
   "projectFilePath": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\williamf\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\williamf\\.nuget\\packages\\fluentvalidation\\11.9.1\\fluentvalidation.11.9.1.nupkg.sha512",
     "C:\\Users\\williamf\\.nuget\\packages\\mac.common.util.core\\2.1.2\\mac.common.util.core.2.1.2.nupkg.sha512",
     "C:\\Users\\williamf\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.31\\microsoft.aspnetcore.authentication.jwtbearer.6.0.31.nupkg.sha512",
     "C:\\Users\\williamf\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -26,6 +26,14 @@
           }
         }
       },
+      "FluentValidation/11.9.1": {
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.9.1.0"
+          }
+        }
+      },
       "Mac.Common.Util.Core/2.1.2": {
         "runtime": {
           "lib/netstandard2.0/Mac.Common.Util.Core.dll": {
@@ -529,6 +537,7 @@
       "MAC.MadeInCotia.Biz/1.0.0": {
         "dependencies": {
           "Dapper": "2.1.35",
+          "FluentValidation": "11.9.1",
           "Mac.Common.Util.Core": "2.1.2",
           "Mac.MadeInCotia.Data": "1.0.0",
           "Mac.MadeInCotia.Entities": "1.0.0"
@@ -565,6 +574,13 @@
       "sha512": "sha512-YKRwjVfrG7GYOovlGyQoMvr1/IJdn+7QzNXJxyMh0YfFF5yvDmTYaJOVYWsckreNjGsGSEtrMTpnzxTUq/tZQw==",
       "path": "dapper/2.1.35",
       "hashPath": "dapper.2.1.35.nupkg.sha512"
+    },
+    "FluentValidation/11.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C+PqISSMdlOZZJx0Hx25atW32tv4vbpsaiQB+PLjK+ZGLzOFuHl1fUJ3Lny77mIZ31ZtYtNG0JgUjxa3wwLsWg==",
+      "path": "fluentvalidation/11.9.1",
+      "hashPath": "fluentvalidation.11.9.1.nupkg.sha512"
     },
     "Mac.Common.Util.Core/2.1.2": {
       "type": "package",

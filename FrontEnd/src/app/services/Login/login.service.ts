@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/app/environment/API';
-import { Login } from 'src/app/interfaces/ColaboradorLogin';
+import { Token } from 'src/app/interfaces/token';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +13,8 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  Logar(Login : Login) : Observable<Login>{
-    return this.http.get(this.API + "/login")
+  Logar(Nm_Usuario: string, Ds_Senha: string) : Observable<Token>{
+    return this.http.post<Token>(this.API + "login", {Nm_Usuario, Ds_Senha})
   }
 }
 

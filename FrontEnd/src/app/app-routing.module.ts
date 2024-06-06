@@ -7,6 +7,7 @@ import { CadastrarColaboradorComponent } from './screens/cadastrar-colaborador/c
 import { EditarCadastroComponent } from './screens/editar-cadastro/editar-cadastro.component';
 import { AlterarSenhaComponent } from './screens/alterar-senha/alterar-senha.component';
 import { DetalhesColaboradorComponent } from './screens/detalhes-colaborador/detalhes-colaborador.component';
+import { authenticatedGuard } from './guards/authenticated.guard';
 
 const routes: Routes = [
   {
@@ -20,27 +21,33 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    // canActivate: [authenticatedGuard]
   },
   {
-    path: 'listar',
-    component: ListaFuncionariosComponent
+    path: 'cadastro',
+    component: ListaFuncionariosComponent,
+    // canActivate: [authenticatedGuard]
   },
   {
-    path: 'cadastroColaborador',
-    component: CadastrarColaboradorComponent
+    path: 'cadastro/colaborador',
+    component: CadastrarColaboradorComponent,
+    // canActivate: [authenticatedGuard]
   },
   {
     path: 'alterarSenha',
-    component: AlterarSenhaComponent
+    component: AlterarSenhaComponent,
+    // canActivate: [authenticatedGuard]
   },
   {
-    path: 'editarCadastro',
-    component: EditarCadastroComponent
+    path: 'editar/:id',
+    component: EditarCadastroComponent,
+    // canActivate: [authenticatedGuard]
   },
   {
-    path: 'detalhesColaborador',
-    component: DetalhesColaboradorComponent
+    path: 'detalhes/:id',
+    component: DetalhesColaboradorComponent,
+    // canActivate: [authenticatedGuard]
   },
   {
     path: '**',

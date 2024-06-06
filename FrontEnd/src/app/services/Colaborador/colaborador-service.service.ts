@@ -7,6 +7,7 @@ import { ColaboradorCadastro, idColaborador } from 'src/app/interfaces/Colaborad
 import { ColaboradorDetalhes } from 'src/app/interfaces/ColaboradorDetalhes';
 import { ColaboradorEditar } from 'src/app/interfaces/ColaboradorEditar';
 import { ListaFiltros } from 'src/app/interfaces/ListaFiltros';
+import { AlterarSenha } from 'src/app/interfaces/AlterarSenha';
 
 
 @Injectable({
@@ -22,12 +23,27 @@ export class ColaboradorService {
   ListarColaboradores(pagina : ListaFiltros) : Observable<ColaboradorListado>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
     return this.http.post<ColaboradorListado>(this.API + "colaboradores/todos", pagina, {headers})
-  } 
+  }
+
+  AlterarSenha(senhas : AlterarSenha){
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
+    return this.http.patch(this.API + "colaboradores/alterarsenha", senhas, {headers})
+  }
+
+  AlterarSenhaOutroColaborador(senhas : AlterarSenha, idColaborador : number){
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
+    return this.http.patch(this.API + "colaboradores/alterarsenha/" + idColaborador, senhas, {headers})
+  }
 
   CadastrarColaborador(colaborador : ColaboradorCadastro) : Observable<idColaborador>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
     return this.http.post<idColaborador>(this.API + "colaboradores", colaborador, {headers})
   }
+
+  // GetMeColaborador() : Observable<GetMeColaborador>{
+  //   const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
+  //   return this.http.get<GetMeColaborador>(this.API + "colaboradores/me", {headers})
+  // }
 
   ConsultaPorId(id : number) : Observable<ColaboradorDetalhes>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
@@ -43,5 +59,12 @@ export class ColaboradorService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
     return this.http.delete<ColaboradorDetalhes>(this.API + "colaboradores/" + id, {headers})
   }
+
+  // VerificaPermissao(idPermissao: number): Observable<boolean> {
+  //   return this.GetMeColaborador().pipe(
+  //     map(resposta => resposta.permissoes.some(permissao => permissao.idPermissao === idPermissao)),
+  //     catchError(() => of(false))
+  //   );
+  // }
 
 }

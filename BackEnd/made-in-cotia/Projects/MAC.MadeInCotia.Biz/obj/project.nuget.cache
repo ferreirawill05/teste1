@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "E+hLiqJBOBD0v05EQq9PJwDxCM/J/TW1jBAYLAwzAcqjmXg4cotVJAYlwdmPif/avQVNDhLCTQUX0gAXd1d/Zg==",
+  "dgSpecHash": "w3aSxAG8MHmhmh+iov+VEkocYFC3sajK/x7g2nHYfyN2wMABNXkMbanOcSVofGRLTjzomRu2PpZzRqEWraGCDg==",
   "success": true,
   "projectFilePath": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\williamf\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\williamf\\.nuget\\packages\\fluentvalidation\\11.9.1\\fluentvalidation.11.9.1.nupkg.sha512",
     "C:\\Users\\williamf\\.nuget\\packages\\mac.common.util.core\\2.1.2\\mac.common.util.core.2.1.2.nupkg.sha512",
     "C:\\Users\\williamf\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\williamf\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.7\\microsoft.data.sqlclient.2.1.7.nupkg.sha512",

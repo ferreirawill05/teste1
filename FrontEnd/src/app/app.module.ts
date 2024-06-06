@@ -26,6 +26,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DoubleMsgComponent } from './screens/comp/double-msg/double-msg.component';
 import { MsgErrorComponent } from './screens/comp/msg-error/msg-error.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -73,7 +76,9 @@ const routes : Routes = [
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatProgressSpinnerModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

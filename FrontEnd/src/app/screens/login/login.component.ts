@@ -1,10 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { takeUntil } from 'rxjs';
 import { LoginService } from 'src/app/services/Login/login.service';
 import { MsgErrorComponent } from '../comp/msg-error/msg-error.component';
 
@@ -20,7 +17,7 @@ export class LoginComponent implements OnInit {
     formulario! : FormGroup
     usuario : String | null = localStorage?.getItem('usuario')
     loading : boolean = false;
-    msgErro : boolean = false;
+    msgError : boolean = false;
 
     constructor(
       private formBuilder : FormBuilder,
@@ -36,7 +33,6 @@ export class LoginComponent implements OnInit {
         lembrar : [[]]
       })
 
-
     }
 
     onSubmit(){
@@ -44,24 +40,24 @@ export class LoginComponent implements OnInit {
       const senha = this.formulario.controls['senha']?.value
       const lembrar = this.formulario.controls['lembrar']?.value
       this.loading = true
-      this.msgErro = false;
+      this.msgError = false;
 
       lembrar ? localStorage.setItem('usuario', usuario) : localStorage.clear()
 
-      // this.service.Logar(usuario, senha).subscribe({
-      //     next: (res) => {
+      this.service.Logar(usuario, senha).subscribe({
+          next: (res) => {
 
-      //       localStorage.setItem("token", res.token)
-      //       this.router.navigate(['/home'])
-      //       this.loading = false
-      //     },
-      //     error: () => {
-      //       this.loading = false
-      //       this.msgErro = true
-      //       this.pushMessage()
-      //     }
-      //   }
-      // )
+            localStorage.setItem("token", res.token)
+            this.router.navigate(['/home'])
+            this.loading = false
+          },
+          error: () => {
+            this.loading = false
+            this.msgError = true
+            this.pushMessage()
+          }
+        }
+      )
     }
 
     pushMessage(){
@@ -71,3 +67,4 @@ export class LoginComponent implements OnInit {
       })
     }
   }
+

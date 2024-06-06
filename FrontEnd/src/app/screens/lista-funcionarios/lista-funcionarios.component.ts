@@ -1,9 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { takeUntil } from 'rxjs';
 import { ColaboradorListado, Colaboradores } from 'src/app/interfaces/ColaboradorListado';
 import { ListaFiltros } from 'src/app/interfaces/ListaFiltros';
 import { ColaboradorService } from 'src/app/services/Colaborador/colaborador-service.service';
@@ -76,7 +74,6 @@ permissaoCadastrar : boolean = false
 
     this.page = event.pageIndex;
     this.pageSize = event.pageSize;
-
     this.ListandoColaboradores()
   }
 

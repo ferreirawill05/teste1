@@ -14,13 +14,8 @@ body{
 }
 
 .input-sizing{
-    width: 480px;
+    width: 715px;
     margin-top: 1rem;
-}
-
-.h1{
-    margin-left: 1rem;
-    margin-bottom: 70px;
 }
 
 .intro{
@@ -29,7 +24,7 @@ body{
 
 .register-button{
     margin-top: 6rem;
-    margin-right: 98px;
+    margin-right: 160px;
 }
 
 .filter-button{
@@ -49,7 +44,20 @@ body{
     min-width: 81%;
 }
 
-:host{
+/* :host{
   width: 20rem;
   height: 10rem;
+} */
+
+.search{
+  background-color: unset;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: rgb(102, 102, 102);
+}
+
+.h1{
+  margin-left: 135px;
 }

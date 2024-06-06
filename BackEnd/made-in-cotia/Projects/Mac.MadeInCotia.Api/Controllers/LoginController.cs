@@ -22,9 +22,14 @@ namespace Mac.MadeInCotia.Api.Controllers
         [Route("/login")]
         public IActionResult Login(LoginViewModel loginViewModel)
         {
-            var usuarioLogin = _loginService.Logar(loginViewModel);
+            var token = _loginService.Logar(loginViewModel);
 
-            return Ok(usuarioLogin);
+            if(string.IsNullOrEmpty(token))
+            {
+                return BadRequest();
+            }
+
+            return Ok(new {token});
         }
 
 
