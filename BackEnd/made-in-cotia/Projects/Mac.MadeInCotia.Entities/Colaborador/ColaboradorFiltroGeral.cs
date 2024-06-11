@@ -9,7 +9,7 @@ namespace Mac.MadeInCotia.Entities.Colaborador
     public class ColaboradorFiltroGeral
     {
         public string? Busca { get; set; }
-        public DateTime? DataInicio { get; set; }
-        public DateTime? DataFim { get; set; }
+        public DateTime? DataInicio { get; set; } = DateTime.Now.AddDays(-30);
+        public DateTime? DataFim { get; set; } = DateTime.Now;
     }
 }

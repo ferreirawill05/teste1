@@ -2,7 +2,7 @@
 <main>
     <div class="intro d-flex w-100 flex-row justify-content-between">
         <h1 class="h1 mb-5 fs-2 p-4">Lista de Colaboradores</h1>
-        <button routerLink="/cadastroColaborador" class="register-button" mat-flat-button color="primary">Cadastrar
+        <button routerLink="/cadastro/colaborador" class="register-button" mat-flat-button color="primary">Cadastrar
             <mat-icon color="" aria-hidden="false" aria-label="add icon" fontIcon="add"></mat-icon>
         </button>
     </div>
@@ -31,38 +31,46 @@
 
         </div>
         <div class="filter-button">
-            <button mat-flat-button color="primary">Mais Recentes</button>
-            <button mat-flat-button color="primary">Mais Antigos</button>
+            <button mat-flat-button color="primary" (click)="FiltroRecentes()">Mais Recentes</button>
+            <button mat-flat-button color="primary" (click)="FiltroAntigos()">Mais Antigos</button>
         </div>
     </div>
     <div class="col-10 mt-3">
         <mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="nomeFuncionario">
-                <th mat-header-cell *matHeaderCellDef>Nome do Funcionário</th>
-                <td mat-cell *matCellDef="let element">{{element.nome}}</td>
+                <mat-header-cell *matHeaderCellDef>Nome do Funcionário</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.nome}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="cpf">
-                <th mat-header-cell *matHeaderCellDef>CPF</th>
-                <td mat-cell *matCellDef="let element">{{element.cpf }}</td>
+                <mat-header-cell *matHeaderCellDef>CPF</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.cpf}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="telefonePrincipal">
-                <th mat-header-cell *matHeaderCellDef>Telefone Principal</th>
-                <td mat-cell *matCellDef="let element">{{element.telefonePrincipal }}</td>
+                <mat-header-cell *matHeaderCellDef>Telefone Principal</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.telefonePrincipal}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="emailPrincipal">
-                <th mat-header-cell *matHeaderCellDef>E-mail Principal</th>
-                <td mat-cell *matCellDef="let element">{{element.emailPrincipal}}</td>
+                <mat-header-cell *matHeaderCellDef>E-mail Principal</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.emailPrincipal}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="dataCriacao">
-                <th mat-header-cell *matHeaderCellDef>Data de Criação</th>
-                <td mat-cell *matCellDef="let element">{{element.dtCriacao }}</td>
+                <mat-header-cell *matHeaderCellDef>Data de Criação</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.dtCriacao}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="cadastradoPor">
-                <th mat-header-cell *matHeaderCellDef>Cadastrado por</th>
-                <td mat-cell *matCellDef="let element">{{element.nsCriacao}}</td>
+                <mat-header-cell *matHeaderCellDef>Cadastrado por</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.nsCriacao}}</mat-cell>
             </ng-container>
            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-           <mat-row *matRowDef="let row; columns:displayedColumns;"></mat-row>
+           <mat-row *matRowDef="let row; columns:displayedColumns;"  (click)="RedirectDetalhes(row)"></mat-row>
         </mat-table>
+
+        <mat-paginator
+        [length]="quantidadeColaboradores"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        [pageIndex]="page"
+        [pageSize]="pageSize"
+        (page)="onPaginateChange($event)">
+      </mat-paginator>
     </div>
 </main>

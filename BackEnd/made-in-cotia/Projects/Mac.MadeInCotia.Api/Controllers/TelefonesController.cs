@@ -45,9 +45,9 @@ namespace Mac.MadeInCotia.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreatePhone (TelefonesInputModel telefone)
+        public IActionResult CreatePhone (TelefonesViewModel telefone)
         {
-            TelefonesInputModel colaboradorTelefone = _telefoneService.CriarTelefone(telefone);
+            TelefonesViewModel colaboradorTelefone = _telefoneService.CriarTelefone(telefone);
             if (colaboradorTelefone == null)
             {
                 return BadRequest();
@@ -56,9 +56,9 @@ namespace Mac.MadeInCotia.Api.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeletePhone(TelefonesInputModel telefone) 
+        public IActionResult DeletePhone(TelefonesViewModel telefone) 
         {
-            TelefonesInputModel colaboradorTelefone = _telefoneService.DeletarTelefone(telefone);
+            TelefonesViewModel colaboradorTelefone = _telefoneService.DeletarTelefone(telefone);
             if (colaboradorTelefone == null)
             {
                 return BadRequest();
@@ -67,9 +67,9 @@ namespace Mac.MadeInCotia.Api.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdatePhone(TelefonesInputModel telefone)
+        public IActionResult UpdatePhone(TelefonesViewModel telefone)
         {
-            TelefonesInputModel colaboradorTelefone = _telefoneService.AtuaizarTelefone(telefone);
+            TelefonesViewModel colaboradorTelefone = _telefoneService.AtuaizarTelefone(telefone);
             if (colaboradorTelefone == null)
             {
                 return BadRequest();

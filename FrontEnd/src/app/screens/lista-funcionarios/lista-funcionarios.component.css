@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+.mat-mdc-table mat-row:hover{
+  background-color: rgb(175, 175, 175);
+  cursor: pointer;
+}
+
 body{
     background-color: #CCCCCC;
 }
@@ -60,4 +65,9 @@ body{
 
 .h1{
   margin-left: 135px;
+}
+
+.mat-mdc-unelevated-button:not(:disabled){
+  color: white;
+  background-color: black;
 }

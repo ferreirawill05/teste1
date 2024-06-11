@@ -7,4 +7,4 @@ interface ListaFiltros{
   dataFinal : Date
   pesquisa : string
   registroTemporal : boolean
-}
+  }

@@ -4,6 +4,7 @@ using Mac.MadeInCotia.Data.Context;
 using Mac.MadeInCotia.Data.Models;
 using Mac.MadeInCotia.Entities.Colaborador;
 using Mac.MadeInCotia.Entities.Emails;
+using MAC.MadeInCotia.Biz.Converter;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -234,22 +235,26 @@ namespace MAC.MadeInCotia.Biz.Services
 
         //Filtro geral
 
-        public IEnumerable<CF_Colaborador> SearchUsers(ColaboradorFiltroGeral colaboradorFiltro )
+        public ColaboradorResponse SearchUsers(ColaboradorFiltroGeral colaboradorFiltro )
         {
               IQueryable<CF_Colaborador> query = _context.Set<CF_Colaborador>()
                                                             .Include(user => user.CF_ColaboradorEmail)
                                                             .Include(user => user.CF_ColaboradorTelefone);
 
+            int qtdColaboradores = 0;
 
             if (!string.IsNullOrEmpty(colaboradorFiltro.Busca))
             {
+                qtdColaboradores = query.Count();
                 query = query.Where(user => user.Nm_Usuario.Contains(colaboradorFiltro.Busca) ||
                                             user.Ds_Cpf.Contains(colaboradorFiltro.Busca) ||
                                             user.CF_ColaboradorEmail.Any(e => e.Ds_Email.Contains(colaboradorFiltro.Busca)) ||
                                             user.CF_ColaboradorTelefone.Any(t => t.Ds_Numero.Contains(colaboradorFiltro.Busca)));
             }
 
-            return query.ToList();
+
+            var listaColaboradores = ConverterColaboradorListagem.Converter(query.ToList());
+            return new ColaboradorResponse(listaColaboradores, qtdColaboradores);
         }
     }
      

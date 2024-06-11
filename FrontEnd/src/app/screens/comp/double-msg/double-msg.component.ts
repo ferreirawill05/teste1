@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./double-msg.component.css']
 })
 export class DoubleMsgComponent {
-
+  
 }

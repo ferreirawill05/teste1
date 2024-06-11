@@ -7,9 +7,10 @@ telefonePrincipal: string;
 emailPrincipal:    string;
 dtCriacao:         string;
 nsCriacao:         string | null;
+colaboradores : Colaboradores[];
 }
 
 export interface ColaboradorListado {
-colaboradores : Colaboradores[];
-numero : number 
+  colaboradores : Colaboradores[];
+  quantidade : number
 }

@@ -18,7 +18,7 @@ namespace MAC.MadeInCotia.Biz.Services
             _context = context;
         }
 
-        public IEnumerable<TelefonesInputModel> ConsultaPorId(int id)
+        public IEnumerable<TelefonesViewModel> ConsultaPorId(int id)
         { 
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
@@ -26,22 +26,22 @@ namespace MAC.MadeInCotia.Biz.Services
                 FROM CF_ColaboradorTelefone
                 WHERE CF_ColaboradorTelefone.Id_Colaborador = @id and CF_ColaboradorTelefone.Fl_Ativo = 1";
 
-                return connection.Query<TelefonesInputModel>(colaboradores, new { id = id });
+                return connection.Query<TelefonesViewModel>(colaboradores, new { id = id });
             }
         }
 
-        public IEnumerable<TelefonesInputModel> ConsultaTodos()
+        public IEnumerable<TelefonesViewModel> ConsultaTodos()
         {
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
                 var telefones = @"SELECT CF_ColaboradorTelefone.Id_Telefone AS IdTelefone, CF_ColaboradorTelefone.Id_Colaborador AS IdColaborador, CF_ColaboradorTelefone.Nm_Apelido AS NmApelido, CF_ColaboradorTelefone.Fl_Principal AS FlPrincipal
                 FROM CF_ColaboradorTelefone";
 
-                return connection.Query<TelefonesInputModel>(telefones);
+                return connection.Query<TelefonesViewModel>(telefones);
             }
         }
 
-        public TelefonesInputModel CriarTelefone (TelefonesInputModel telefone)
+        public TelefonesViewModel CriarTelefone (TelefonesViewModel telefone)
         {
             CF_ColaboradorTelefone colaboradorTelefone = new CF_ColaboradorTelefone
             (
@@ -57,7 +57,7 @@ namespace MAC.MadeInCotia.Biz.Services
             return(telefone);
         }
 
-        public TelefonesInputModel DeletarTelefone(TelefonesInputModel telefone)
+        public TelefonesViewModel DeletarTelefone(TelefonesViewModel telefone)
         {
             CF_ColaboradorTelefone colaboradorTelefone = new CF_ColaboradorTelefone
             (
@@ -73,7 +73,7 @@ namespace MAC.MadeInCotia.Biz.Services
             return (telefone);
         }
 
-        public TelefonesInputModel AtuaizarTelefone(TelefonesInputModel telefone)
+        public TelefonesViewModel AtuaizarTelefone(TelefonesViewModel telefone)
         {
             CF_ColaboradorTelefone? colaboradorTelefone = _context.CF_ColaboradorTelefone.Find(telefone.IdTelefone);
 
@@ -85,6 +85,11 @@ namespace MAC.MadeInCotia.Biz.Services
             _context.CF_ColaboradorTelefone.Update(colaboradorTelefone);
             _context.SaveChanges();
             return (telefone);
+        }
+
+        public TelefonesViewModel AtualizarFlag(TelefonesViewModel telefone)
+        {
+            CF_ColaboradorTelefone? flagTelefone = _context.CF_ColaboradorTelefone.Find(telefone.);
         }
     }
 }

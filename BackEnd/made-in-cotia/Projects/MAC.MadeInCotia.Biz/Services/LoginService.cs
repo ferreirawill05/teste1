@@ -42,6 +42,7 @@ namespace MAC.MadeInCotia.Biz.Services
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.Name, user.Nm_Nome),
+                    new Claim(ClaimTypes.Role, "master"),
                     new Claim("IdColaborador", user.Id_Colaborador.ToString()),
                     new Claim("IdPermissaoColaborador", user.Id_TipoUsuario.ToString())
                 }),

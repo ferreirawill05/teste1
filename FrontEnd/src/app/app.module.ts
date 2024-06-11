@@ -28,6 +28,7 @@ import { DoubleMsgComponent } from './screens/comp/double-msg/double-msg.compone
 import { MsgErrorComponent } from './screens/comp/msg-error/msg-error.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 
 
@@ -78,9 +79,11 @@ const routes : Routes = [
     MatDialogModule,
     MatNativeDateModule,
     MatProgressSpinnerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskDirective,
+
   ],
-  providers: [],
+  providers: [provideNgxMask({})],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

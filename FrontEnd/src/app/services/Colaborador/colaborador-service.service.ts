@@ -21,8 +21,9 @@ export class ColaboradorService {
 
   //tipar interface
   ListarColaboradores(pagina : ListaFiltros) : Observable<ColaboradorListado>{
+
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
-    return this.http.post<ColaboradorListado>(this.API + "colaboradores/todos", pagina, {headers})
+    return this.http.post<ColaboradorListado>(this.API + "filtroGeral", pagina, {headers})
   }
 
   AlterarSenha(senhas : AlterarSenha){

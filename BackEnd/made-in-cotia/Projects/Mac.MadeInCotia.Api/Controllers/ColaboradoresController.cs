@@ -1,6 +1,7 @@
 ﻿using Mac.MadeInCotia.Data.Models;
 using Mac.MadeInCotia.Entities.Colaborador;
 using MAC.MadeInCotia.Biz.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
@@ -42,6 +43,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(colaborador);
         }
 
+        /*[Authorize]*/
         [HttpPost("/criar")]
         public IActionResult CreateUser(ColaboradorViewModel colaborador)
         {
@@ -54,6 +56,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(colaborador);
         }
 
+        [Authorize]
         [HttpDelete("/deletar")]
         public IActionResult DeleteUser(ColaboradorViewModel colaborador)
         {
@@ -76,17 +79,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(senhaUsuario);
         }
 
-        //Gerador de Token
-
-        /*[HttpGet]
-        public IActionResult GetToken(CF_Colaborador colaborador) 
-        {
-            ColaboradorViewModel colaboradorToken = _colaboradorService.GerarToken(colaborador);
-            return Ok(colaboradorToken);
-        }*/
-
-        //----------------
-
+        
         /* ----- filtros -----*/
 
         /*Filtro mais recentes*/
@@ -124,7 +117,7 @@ namespace Mac.MadeInCotia.Api.Controllers
 
             var usuarios = _colaboradorService.SearchUsers(colaborador);
 
-            if (usuarios == null || !usuarios.Any())
+            if (usuarios == null || !usuarios.Colaboradores.Any())
             {
                 return NotFound();
             }
