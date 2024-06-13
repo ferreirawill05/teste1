@@ -1,8 +1,8 @@
-<!-- <div class="push-erro py-2 px-2 bg-dark d-flex flex-column">
-  <p *ngIf="!dataDuplicada.erro" class=" fw-bold fs-small text-danger">Os seguintes itens ja estão cadastrados ou são invalidos:</p>
+<div class="py-2 px-2 bg-dark d-flex flex-column">
+  <p *ngIf="!dataDuplicada.erro" class=" fw-bold fs-small text-danger">Os itens inseridos já estão cadastrados ou são invalidos:</p>
   <p *ngIf="dataDuplicada.usuario" class=" fs-small text-danger">Usuario: {{dataDuplicada.usuario}}</p>
   <p *ngIf="dataDuplicada.cpf" class=" fs-small text-danger">CPF: {{dataDuplicada.cpf}}</p>
   <p *ngIf="dataDuplicada.erro" class=" fs-small text-danger">{{dataDuplicada.erro}}</p>
   <p *ngFor="let email of dataDuplicada.emails" class=" fs-small text-danger">Email: {{email}}</p>
-  <p *ngFor="let telefone of dataDuplicada.telefones" class=" fs-small text-danger">Telefone: {{telefone | mask: '(00) 00000-0000'}}</p>
-</div> -->
+  <p *ngFor="let telefone of dataDuplicada.telefones" class=" fs-small text-danger">Telefone: {{telefone}}</p>
+</div>
