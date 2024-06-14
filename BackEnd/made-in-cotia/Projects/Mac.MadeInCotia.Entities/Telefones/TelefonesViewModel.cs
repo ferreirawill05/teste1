@@ -12,5 +12,6 @@ namespace Mac.MadeInCotia.Entities.Telefones
         public int IdColaborador { get; set; }
         public string NmApelido { get; set; } = null!;
         public string DsNumero { get; set; } = null!;
+        public bool FlPrincipal { get; set; }
     }
 }

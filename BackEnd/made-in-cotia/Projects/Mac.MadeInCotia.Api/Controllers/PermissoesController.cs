@@ -1,6 +1,7 @@
 ﻿using Mac.MadeInCotia.Data.Models;
 using Mac.MadeInCotia.Entities.Permissoes;
 using MAC.MadeInCotia.Biz.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +17,7 @@ namespace Mac.MadeInCotia.Api.Controllers
         {
             _permissaoService = permissaoService;
         }
+
 
         [HttpGet]
         public IActionResult GetPermission(int id) 
@@ -39,6 +41,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(permissaoTotal);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult CreatePermission(PermissoesViewModel permissao)
         {
@@ -50,6 +53,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(permissao);
         }
 
+        [Authorize]
         [HttpDelete]
         public IActionResult DeletePermission(PermissoesViewModel permissao) 
         {
@@ -61,6 +65,8 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(permissao);
         }
 
+
+        [Authorize]
         [HttpPut]
         public IActionResult UpdatePermission(PermissoesViewModel permissao)
         {

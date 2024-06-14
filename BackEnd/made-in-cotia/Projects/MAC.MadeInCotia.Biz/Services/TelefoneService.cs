@@ -41,6 +41,20 @@ namespace MAC.MadeInCotia.Biz.Services
             }
         }
 
+        public IEnumerable<CF_ColaboradorTelefone> ConsultaInativo(int id)
+        {
+
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                var colaboradores = @"
+                    SELECT CF_ColaboradorTelefone.Id_Telefone AS IdTelefone, CF_ColaboradorTelefone.Id_Colaborador AS IdColaborador, CF_ColaboradorTelefone.Ds_Numero AS DsNumero, CF_ColaboradorTelefone.Nm_Apelido AS NmApelido, CF_ColaboradorTelefone.Fl_Principal AS FlPrincipal, CF_ColaboradorTelefone.Fl_Ativo AS FlAtivo,  CF_ColaboradorTelefone.Dt_Criacao as DtCriacao, CF_ColaboradorTelefone.Dt_UltAlteracao As DtUltAlteracao, CF_ColaboradorTelefone.Ds_UltAlteracao AS DsUltAlteracao 
+                    FROM CF_ColaboradorTelefone
+                    WHERE Id_Colaborador = @id";
+
+                return connection.Query<CF_ColaboradorTelefone>(colaboradores, new { id = id });
+            }
+        }
+
         public TelefonesViewModel CriarTelefone (TelefonesViewModel telefone)
         {
             CF_ColaboradorTelefone colaboradorTelefone = new CF_ColaboradorTelefone
@@ -79,7 +93,7 @@ namespace MAC.MadeInCotia.Biz.Services
 
             if (colaboradorTelefone == null)
             {
-                throw new ArgumentException("Colaborador not found.");
+                throw new ArgumentException("Telefone not found.");
             }
 
             _context.CF_ColaboradorTelefone.Update(colaboradorTelefone);
@@ -89,7 +103,14 @@ namespace MAC.MadeInCotia.Biz.Services
 
         public TelefonesViewModel AtualizarFlag(TelefonesViewModel telefone)
         {
-            CF_ColaboradorTelefone? flagTelefone = _context.CF_ColaboradorTelefone.Find(telefone.);
+            CF_ColaboradorTelefone? flagTelefone = _context.CF_ColaboradorTelefone.Find(telefone.FlPrincipal);
+            if (flagTelefone == null)
+            {
+                throw new ArgumentException("Telefone not found");
+            }
+            _context.CF_ColaboradorTelefone.Update(flagTelefone);
+            _context.SaveChanges();
+            return (telefone);
         }
     }
 }

@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.biz\\services\\colaboradorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|solutionrelative:projects\\mac.madeincotia.biz\\services\\colaboradorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.biz\\services\\telefoneservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|solutionrelative:projects\\mac.madeincotia.biz\\services\\telefoneservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.entities\\telefones\\telefonesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|solutionrelative:projects\\mac.madeincotia.entities\\telefones\\telefonesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.entities\\colaborador\\colaboradorfiltrogeral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|solutionrelative:projects\\mac.madeincotia.entities\\colaborador\\colaboradorfiltrogeral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|solutionrelative:projects\\mac.madeincotia.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.entities\\paginator\\paginatorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|solutionrelative:projects\\mac.madeincotia.entities\\paginator\\paginatorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.entities\\colaborador\\colaboradorlistagemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|solutionrelative:projects\\mac.madeincotia.entities\\colaborador\\colaboradorlistagemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.entities\\permissoes\\permissoesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|solutionrelative:projects\\mac.madeincotia.entities\\permissoes\\permissoesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.entities\\colaborador\\colaboradorloginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,32 +31,52 @@
       "RelativeMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|solutionrelative:projects\\mac.madeincotia.entities\\colaborador\\colaboradorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.entities\\colaborador\\colaboradorfiltrogeral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|solutionrelative:projects\\mac.madeincotia.entities\\colaborador\\colaboradorfiltrogeral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.entities\\colaborador\\colaboradorlistagemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|solutionrelative:projects\\mac.madeincotia.entities\\colaborador\\colaboradorlistagemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D8F352A-FD7E-4891-9687-CC383D18F899}|Projects\\Mac.MadeInCotia.Data\\Mac.MadeInCotia.Data.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.data\\models\\cf_colaborador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D8F352A-FD7E-4891-9687-CC383D18F899}|Projects\\Mac.MadeInCotia.Data\\Mac.MadeInCotia.Data.csproj|solutionrelative:projects\\mac.madeincotia.data\\models\\cf_colaborador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.api\\controllers\\colaboradorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|solutionrelative:projects\\mac.madeincotia.api\\controllers\\colaboradorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.biz\\services\\colaboradorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|solutionrelative:projects\\mac.madeincotia.biz\\services\\colaboradorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.biz\\validators\\usuariovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|solutionrelative:projects\\mac.madeincotia.biz\\validators\\usuariovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.biz\\services\\enum\\permissaoenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|solutionrelative:projects\\mac.madeincotia.biz\\services\\enum\\permissaoenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.biz\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|solutionrelative:projects\\mac.madeincotia.biz\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.api\\controllers\\telefonescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|solutionrelative:projects\\mac.madeincotia.api\\controllers\\telefonescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.api\\controllers\\permissoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|solutionrelative:projects\\mac.madeincotia.api\\controllers\\permissoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|solutionrelative:projects\\mac.madeincotia.api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.api\\controllers\\colaboradorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|solutionrelative:projects\\mac.madeincotia.api\\controllers\\colaboradorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.api\\controllers\\emailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|solutionrelative:projects\\mac.madeincotia.api\\controllers\\emailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8F352A-FD7E-4891-9687-CC383D18F899}|Projects\\Mac.MadeInCotia.Data\\Mac.MadeInCotia.Data.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.data\\models\\cf_colaborador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D8F352A-FD7E-4891-9687-CC383D18F899}|Projects\\Mac.MadeInCotia.Data\\Mac.MadeInCotia.Data.csproj|solutionrelative:projects\\mac.madeincotia.data\\models\\cf_colaborador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.entities\\telefones\\telefonesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E0D686B-3FB1-4E9E-87B0-D02733BE1AA4}|Projects\\Mac.MadeInCotia.Entities\\Mac.MadeInCotia.Entities.csproj|solutionrelative:projects\\mac.madeincotia.entities\\telefones\\telefonesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72180C11-CBF3-402F-AEAF-276766D9C8A0}|Projects\\Mac.MadeInCotia.Api\\Mac.MadeInCotia.Api.csproj|solutionrelative:projects\\mac.madeincotia.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.biz\\validators\\usuariovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|solutionrelative:projects\\mac.madeincotia.biz\\validators\\usuariovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.biz\\converter\\convertercolaboradorlistagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -61,10 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5D8F352A-FD7E-4891-9687-CC383D18F899}|Projects\\Mac.MadeInCotia.Data\\Mac.MadeInCotia.Data.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.data\\models\\df_colaboradorpermissao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D8F352A-FD7E-4891-9687-CC383D18F899}|Projects\\Mac.MadeInCotia.Data\\Mac.MadeInCotia.Data.csproj|solutionrelative:projects\\mac.madeincotia.data\\models\\df_colaboradorpermissao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|c:\\users\\williamf\\desktop\\madeincotia\\backend\\made-in-cotia\\projects\\mac.madeincotia.biz\\services\\enum\\permissaoenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92F7356E-07EE-4E72-8264-C91943EADD1B}|Projects\\MAC.MadeInCotia.Biz\\MAC.MadeInCotia.Biz.csproj|solutionrelative:projects\\mac.madeincotia.biz\\services\\enum\\permissaoenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,24 +94,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 354,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
+              "Title": "PermissoesController.cs",
+              "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Api\\Controllers\\PermissoesController.cs",
+              "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Api\\Controllers\\PermissoesController.cs",
+              "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Api\\Controllers\\PermissoesController.cs",
+              "RelativeToolTip": "Projects\\Mac.MadeInCotia.Api\\Controllers\\PermissoesController.cs",
+              "ViewState": "AQIAAAoAAADgMzMzMzMbwEQAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T08:15:05.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EmailsController.cs",
+              "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Api\\Controllers\\EmailsController.cs",
+              "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Api\\Controllers\\EmailsController.cs",
+              "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Api\\Controllers\\EmailsController.cs",
+              "RelativeToolTip": "Projects\\Mac.MadeInCotia.Api\\Controllers\\EmailsController.cs",
+              "ViewState": "AQIAAAkAAAB4mZmZmXk8wCEAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T08:13:26.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaginatorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Entities\\Paginator\\PaginatorViewModel.cs",
+              "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Entities\\Paginator\\PaginatorViewModel.cs",
+              "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Entities\\Paginator\\PaginatorViewModel.cs",
+              "RelativeToolTip": "Projects\\Mac.MadeInCotia.Entities\\Paginator\\PaginatorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T07:51:06.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PermissoesViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Entities\\Permissoes\\PermissoesViewModel.cs",
+              "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Entities\\Permissoes\\PermissoesViewModel.cs",
+              "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Entities\\Permissoes\\PermissoesViewModel.cs",
+              "RelativeToolTip": "Projects\\Mac.MadeInCotia.Entities\\Permissoes\\PermissoesViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T07:48:53.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TelefonesController.cs",
+              "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Api\\Controllers\\TelefonesController.cs",
+              "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Api\\Controllers\\TelefonesController.cs",
+              "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Api\\Controllers\\TelefonesController.cs",
+              "RelativeToolTip": "Projects\\Mac.MadeInCotia.Api\\Controllers\\TelefonesController.cs",
+              "ViewState": "AQIAACAAAAAA///////1v0UAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T15:45:43.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "TelefonesViewModel.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Entities\\Telefones\\TelefonesViewModel.cs",
               "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Entities\\Telefones\\TelefonesViewModel.cs",
               "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Entities\\Telefones\\TelefonesViewModel.cs",
               "RelativeToolTip": "Projects\\Mac.MadeInCotia.Entities\\Telefones\\TelefonesViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T16:53:28.026Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-11T16:53:28.026Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ColaboradorResponse.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Entities\\Colaborador\\ColaboradorResponse.cs",
               "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Entities\\Colaborador\\ColaboradorResponse.cs",
@@ -104,20 +185,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TelefoneService.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\MAC.MadeInCotia.Biz\\Services\\TelefoneService.cs",
               "RelativeDocumentMoniker": "Projects\\MAC.MadeInCotia.Biz\\Services\\TelefoneService.cs",
               "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\MAC.MadeInCotia.Biz\\Services\\TelefoneService.cs",
               "RelativeToolTip": "Projects\\MAC.MadeInCotia.Biz\\Services\\TelefoneService.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAYwFsAAABhAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAUwB0AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-10T11:56:08.709Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "ConverterColaboradorListagem.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\MAC.MadeInCotia.Biz\\Converter\\ConverterColaboradorListagem.cs",
               "RelativeDocumentMoniker": "Projects\\MAC.MadeInCotia.Biz\\Converter\\ConverterColaboradorListagem.cs",
@@ -125,12 +206,11 @@
               "RelativeToolTip": "Projects\\MAC.MadeInCotia.Biz\\Converter\\ConverterColaboradorListagem.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T13:05:32.507Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T13:05:32.507Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ColaboradorListagemViewModel.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Entities\\Colaborador\\ColaboradorListagemViewModel.cs",
               "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Entities\\Colaborador\\ColaboradorListagemViewModel.cs",
@@ -143,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ColaboradorLoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Entities\\Colaborador\\ColaboradorLoginViewModel.cs",
               "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Entities\\Colaborador\\ColaboradorLoginViewModel.cs",
@@ -156,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Api\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Api\\Controllers\\LoginController.cs",
@@ -164,8 +244,7 @@
               "RelativeToolTip": "Projects\\Mac.MadeInCotia.Api\\Controllers\\LoginController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T17:04:59.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T17:04:59.5Z"
             },
             {
               "$type": "Document",
@@ -175,14 +254,14 @@
               "RelativeDocumentMoniker": "Projects\\MAC.MadeInCotia.Biz\\Services\\LoginService.cs",
               "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\MAC.MadeInCotia.Biz\\Services\\LoginService.cs",
               "RelativeToolTip": "Projects\\MAC.MadeInCotia.Biz\\Services\\LoginService.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAYwDcAAAAAAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA8wDcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-06T17:01:57.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "UsuarioValidator.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\MAC.MadeInCotia.Biz\\Validators\\UsuarioValidator.cs",
               "RelativeDocumentMoniker": "Projects\\MAC.MadeInCotia.Biz\\Validators\\UsuarioValidator.cs",
@@ -190,25 +269,24 @@
               "RelativeToolTip": "Projects\\MAC.MadeInCotia.Biz\\Validators\\UsuarioValidator.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T14:42:52.749Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T14:42:52.749Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 9,
               "Title": "PermissaoEnum.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\MAC.MadeInCotia.Biz\\Services\\Enum\\PermissaoEnum.cs",
               "RelativeDocumentMoniker": "Projects\\MAC.MadeInCotia.Biz\\Services\\Enum\\PermissaoEnum.cs",
               "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\MAC.MadeInCotia.Biz\\Services\\Enum\\PermissaoEnum.cs",
               "RelativeToolTip": "Projects\\MAC.MadeInCotia.Biz\\Services\\Enum\\PermissaoEnum.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-06T14:27:08.833Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "DF_ColaboradorPermissao.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Data\\Models\\DF_ColaboradorPermissao.cs",
               "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Data\\Models\\DF_ColaboradorPermissao.cs",
@@ -216,12 +294,11 @@
               "RelativeToolTip": "Projects\\Mac.MadeInCotia.Data\\Models\\DF_ColaboradorPermissao.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T14:22:38.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T14:22:38.26Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 17,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Api\\Program.cs",
               "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Api\\Program.cs",
@@ -229,25 +306,24 @@
               "RelativeToolTip": "Projects\\Mac.MadeInCotia.Api\\Program.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAgwDsAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T19:55:08.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T19:55:08.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 8,
               "Title": "ColaboradoresController.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Api\\Controllers\\ColaboradoresController.cs",
               "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Api\\Controllers\\ColaboradoresController.cs",
               "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Api\\Controllers\\ColaboradoresController.cs",
               "RelativeToolTip": "Projects\\Mac.MadeInCotia.Api\\Controllers\\ColaboradoresController.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAA6wHMAAAAIAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAcwFgAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T19:36:30.891Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "CF_Colaborador.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Data\\Models\\CF_Colaborador.cs",
               "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Data\\Models\\CF_Colaborador.cs",
@@ -255,31 +331,30 @@
               "RelativeToolTip": "Projects\\Mac.MadeInCotia.Data\\Models\\CF_Colaborador.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T19:33:23.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T19:33:23.792Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "ColaboradorFiltroGeral.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Entities\\Colaborador\\ColaboradorFiltroGeral.cs",
               "RelativeDocumentMoniker": "Projects\\Mac.MadeInCotia.Entities\\Colaborador\\ColaboradorFiltroGeral.cs",
               "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\Mac.MadeInCotia.Entities\\Colaborador\\ColaboradorFiltroGeral.cs",
               "RelativeToolTip": "Projects\\Mac.MadeInCotia.Entities\\Colaborador\\ColaboradorFiltroGeral.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAnAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T19:26:18.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "ColaboradorService.cs",
               "DocumentMoniker": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\MAC.MadeInCotia.Biz\\Services\\ColaboradorService.cs",
               "RelativeDocumentMoniker": "Projects\\MAC.MadeInCotia.Biz\\Services\\ColaboradorService.cs",
               "ToolTip": "C:\\Users\\williamf\\Desktop\\madeincotia\\BackEnd\\made-in-cotia\\Projects\\MAC.MadeInCotia.Biz\\Services\\ColaboradorService.cs",
               "RelativeToolTip": "Projects\\MAC.MadeInCotia.Biz\\Services\\ColaboradorService.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAmwOkAAAAJAAAA",
+              "ViewState": "AQIAAN8AAAAAAAAAAAAywAQBAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T19:09:07.357Z",
               "EditorCaption": ""

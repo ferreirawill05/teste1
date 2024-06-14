@@ -251,7 +251,14 @@ namespace MAC.MadeInCotia.Biz.Services
                                             user.CF_ColaboradorEmail.Any(e => e.Ds_Email.Contains(colaboradorFiltro.Busca)) ||
                                             user.CF_ColaboradorTelefone.Any(t => t.Ds_Numero.Contains(colaboradorFiltro.Busca)));
             }
-
+            if (colaboradorFiltro.RegistroTemporal)
+            {
+                query = query.OrderByDescending(t => t.Dt_Criacao);
+            }
+            else
+            {
+                query = query.OrderBy(x => x.Dt_Criacao);
+            }
 
             var listaColaboradores = ConverterColaboradorListagem.Converter(query.ToList());
             return new ColaboradorResponse(listaColaboradores, qtdColaboradores);

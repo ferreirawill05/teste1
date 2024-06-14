@@ -1,3 +1,6 @@
+import { PossuiEspecial } from 'src/app/validation/CaractereEspecial';
+import { ElementRef } from '@angular/core';
+import { ColaboradorEditar } from './../../interfaces/ColaboradorEditar';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -6,7 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { ColaboradorCadastro, Telefone, idColaborador } from 'src/app/interfaces/ColaboradorCadastro';
 import { ColaboradorDetalhes } from 'src/app/interfaces/ColaboradorDetalhes';
-import { ColaboradorEditar } from 'src/app/interfaces/ColaboradorEditar';
 import { DataDuplicada } from 'src/app/interfaces/DataDuplicada';
 import { EmailCadastro } from 'src/app/interfaces/EmailCadastro';
 import { ListaId } from 'src/app/interfaces/ListaId';
@@ -22,14 +24,13 @@ import { DoubleMsgComponent } from '../comp/double-msg/double-msg.component';
 import { AlterarSenhaComponent } from '../alterar-senha/alterar-senha.component';
 import { EmailServiceService } from 'src/app/services/Email/email-service.service';
 import { PermissoesServiceService } from 'src/app/services/Permissao/permissoes-service.service';
-import { PossuiEspecial } from 'src/app/validation/CaractereEspecial';
 
 @Component({
   selector: 'app-cadastro-colaborador',
   templateUrl: './cadastrar-colaborador.component.html',
   styleUrls: ['./cadastrar-colaborador.component.css']
 })
-export class CadastroColaboradorComponent implements OnInit {
+export class CadastrarColaboradorComponent implements OnInit {
 
   displayedColumnsTelefone: string[] = ['Apelido', 'Telefone', 'TipoContato', 'Excluir'];
   displayedColumnsEmail: string[] = ['Email', 'TipoContato', 'Excluir'];
@@ -65,7 +66,7 @@ export class CadastroColaboradorComponent implements OnInit {
   ]
 
   constructor(
-    private elemento : Element,
+    private elemento : ElementRef,
     private serviceColaborador : ColaboradorService,
     private serviceEmail : EmailServiceService,
     private serviceTelefone : TelefoneServiceService,
@@ -105,12 +106,8 @@ export class CadastroColaboradorComponent implements OnInit {
           senha : new FormControl("", [Validators.required, Validators.minLength(8), PossuiEspecial(), ContemMaiuscula(), ContemNumero()]),
           confirmarSenha : new FormControl("", [Validators.required]),
         }, [passwordMatch("senha","confirmarSenha")])
-
-
       }
     });
-
-
     this.dataSourceTelefone = new MatTableDataSource<TelefoneCadastro>(this.MockTelefone);
     this.dataSourceEmail = new MatTableDataSource<EmailCadastro>(this.MockEmail);
   }
@@ -179,7 +176,6 @@ export class CadastroColaboradorComponent implements OnInit {
     });
   }
 
-
   CadastrarColaborador(event : Event){
     event.preventDefault()
 
@@ -194,7 +190,6 @@ export class CadastroColaboradorComponent implements OnInit {
       telefones: this.MockTelefone
     }
 
-
     this.serviceColaborador.CadastrarColaborador(colaborador).subscribe({
       next: (data : idColaborador) => {
         this.CadastrarEmail(data.idColaborador)
@@ -205,10 +200,6 @@ export class CadastroColaboradorComponent implements OnInit {
         this.pushMessageError(data.error)
       }
     })
-
-
-
-
   }
 
   AlterarColaborador(event : Event){
@@ -239,14 +230,9 @@ export class CadastroColaboradorComponent implements OnInit {
         this.AlterarPermissoes(this.idColaborador)
       },
       error: (data) => {
-        this.pushMessageErrorEditar()
+        // this.pushMessageErrorEditar()
       }
     })
-
-
-
-
-
   }
 
   AlterarEmails(event : Event){
@@ -288,11 +274,7 @@ export class CadastroColaboradorComponent implements OnInit {
         console.log('Erro ao editar permissões')
         this.route.navigate(['/detalhes/' + this.idColaborador])
       }
-
     })
-
-
-
   }
 
   CadastrarEmail(idColaborador : number){
@@ -504,15 +486,15 @@ export class CadastroColaboradorComponent implements OnInit {
     })
   }
 
-  pushMessageErrorEditar(){
-    const dataDuplica : DataDuplicada = {
-      erro: "Dados duplicados, ja cadastrados em outro colaborador"
-    }
-    this.dialog.open(DoubleMsgComponent, {
-      data: dataDuplica,
-      panelClass: 'dialog-container-alterar-senha',
-    })
-  }
+  // pushMessageErrorEditar(){
+  //   const dataDuplica : DataDuplicada = {
+  //     erro: "Dados duplicados, ja cadastrados em outro colaborador"
+  //   }
+  //   this.dialog.open(DoubleMsgComponent, {
+  //     data: dataDuplica,
+  //     panelClass: 'dialog-container-alterar-senha',
+  //   })
+  // }
 
   ValidaListaEmail(){
     let erro = true

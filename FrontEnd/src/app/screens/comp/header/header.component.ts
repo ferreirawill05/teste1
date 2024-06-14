@@ -10,7 +10,7 @@ import { ColaboradorService } from 'src/app/services/Colaborador/colaborador-ser
 })
 export class HeaderComponent implements OnInit {
 
-  nome : string = ""
+  nome : string = "william"
 
   constructor(
     private router: Router,

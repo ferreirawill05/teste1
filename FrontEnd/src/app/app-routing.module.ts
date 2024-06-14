@@ -22,32 +22,32 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    // canActivate: [authenticatedGuard]
+    canActivate: [authenticatedGuard]
   },
   {
     path: 'cadastro',
     component: ListaFuncionariosComponent,
-    // canActivate: [authenticatedGuard]
+    canActivate: [authenticatedGuard]
   },
   {
     path: 'cadastro/colaborador',
     component: CadastrarColaboradorComponent,
-    // canActivate: [authenticatedGuard]
+    canActivate: [authenticatedGuard]
   },
   {
     path: 'alterarSenha',
     component: AlterarSenhaComponent,
-    // canActivate: [authenticatedGuard]
+    canActivate: [authenticatedGuard]
   },
   {
     path: 'editar/:id',
     component: EditarCadastroComponent,
-    // canActivate: [authenticatedGuard]
+    canActivate: [authenticatedGuard]
   },
   {
     path: 'detalhes/:id',
     component: DetalhesColaboradorComponent,
-    // canActivate: [authenticatedGuard]
+    canActivate: [authenticatedGuard]
   },
   {
     path: '**',

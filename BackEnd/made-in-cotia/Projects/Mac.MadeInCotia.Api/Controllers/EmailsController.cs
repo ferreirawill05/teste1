@@ -1,5 +1,6 @@
 ﻿using Mac.MadeInCotia.Entities.Emails;
 using MAC.MadeInCotia.Biz.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mac.MadeInCotia.Api.Controllers
@@ -15,6 +16,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             _emailService = emailService;
         }
 
+        [Authorize]
         [HttpGet("{Id}")]
         public IActionResult GetById(int id)
         {
@@ -29,6 +31,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet("/EmailTodos")]
         public IActionResult GetAll() 
         {
@@ -36,6 +39,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(emailUsuario);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult CreateEmail(EmailsViewModel email)
         {
@@ -48,6 +52,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(email);
         }
 
+        [Authorize]
         [HttpDelete("/deletaUm")]
         public IActionResult Delete(EmailsViewModel email) {
             EmailsViewModel mensagem = _emailService.DeletarEmail(email);
@@ -55,6 +60,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(mensagem);
         }
 
+        [Authorize]
         [HttpPut]
         public IActionResult Put(EmailsViewModel email)
         {

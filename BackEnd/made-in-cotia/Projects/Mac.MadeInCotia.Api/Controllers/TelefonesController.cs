@@ -1,5 +1,6 @@
 ﻿using Mac.MadeInCotia.Entities.Telefones;
 using MAC.MadeInCotia.Biz.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mac.MadeInCotia.Api.Controllers
@@ -44,6 +45,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult CreatePhone (TelefonesViewModel telefone)
         {
@@ -55,6 +57,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(telefone);
         }
 
+        [Authorize]
         [HttpDelete]
         public IActionResult DeletePhone(TelefonesViewModel telefone) 
         {
@@ -75,6 +78,18 @@ namespace Mac.MadeInCotia.Api.Controllers
                 return BadRequest();
             }
             return Ok(telefone);
+        }
+
+        [Authorize]
+        [HttpPut("/flag")]
+        public IActionResult UpdateFla(TelefonesViewModel flag)
+        {
+            TelefonesViewModel telefoneFlag = _telefoneService.AtualizarFlag(flag);
+            if (telefoneFlag == null)
+            {
+                return BadRequest();
+            }
+            return Ok(flag);
         }
     }
 

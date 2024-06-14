@@ -19,6 +19,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             _colaboradorService = colaboradorService;
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetUser(int id)
         {
@@ -31,6 +32,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(colaborador);
         }
 
+        [Authorize]
         [HttpGet("/todos")]
         public IActionResult GetAllUsers()
         {
@@ -43,7 +45,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(colaborador);
         }
 
-        /*[Authorize]*/
+        [Authorize]
         [HttpPost("/criar")]
         public IActionResult CreateUser(ColaboradorViewModel colaborador)
         {
@@ -65,6 +67,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(usuario);
         }
 
+        [Authorize]
         [HttpPut("/atualizar")]
         public IActionResult UpdateUser(ColaboradorViewModel colaborador)
         {
@@ -72,6 +75,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(usuario);
         }
 
+ 
         [HttpPut("/atualizarSenha")]
         public IActionResult UpdatePassword(ColaboradorAlterarSenhaViewModel colaborador)
         {

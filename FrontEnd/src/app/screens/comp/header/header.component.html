@@ -1,6 +1,6 @@
 <mat-toolbar class="header d-flex align-items-center justify-content-center ">
     <nav class="d-flex align-items-center justify-content-between px-sm-5 w-100">
-      <div class="ms-1 gap-5 d-flex align-items-center justify-content-between">
+      <div class="ms-5 gap-5 d-flex align-items-center justify-content-between">
         <img class="w-75" src="../../../../assets/logo-branco.png" alt="Logo">
         <div class="gap-4 d-md-flex ">
           <a routerLink="/home" class="font hover-link">Home</a>
@@ -8,18 +8,15 @@
         </div>
       </div>
       <div class="dropdown">
-        <div class="cursor-pointer" data-bs-toggle="dropdown" aria-expanded="false">
-          <button *ngIf="nome" class="rounded-5 px-3 py-1 bg-danger text-white fs-4 fw-bold " type="button" >
-            <!-- {{.split("")[0].toUpperCase()}} -->
+          <button *ngIf="nome" class="btn btn-secondary dropdown-toggle rounded-5 px-3 py-1 bg-danger text-white fs-4 fw-bold" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           </button>
           <button class="ms-2 fs-5 fw-600 text-decoration-none text-white border-0 bg-transparent">{{nome}}</button>
 
-        </div>
-        <ul class="dropdown-menu py-4">
+        <ul class="dropdown-menu py-4" aria-labelledby="dropdownMenuButton1">
           <li class="px-4 fs-6 my-2"><a (click)="Logout()" class="text-decoration-none text-danger"><i class="bi bi-box-arrow-right"></i> Sair</a></li>
-          <li class="px-4 fs-6 my-2"><a routerLink="/alterarsenha" class="text-decoration-none  text-dark"><i class="bi bi-lock"></i> Alterar senha </a></li>
-          <li class="px-4 fs-6 my-2"><a routerLink="/home"class="text-decoration-none d-md-none text-dark"><i class="bi bi-house"></i> Home </a></li>
-          <li class="px-4 fs-6 my-2"><a routerLink="/cadastro"class="text-decoration-none d-md-none text-dark"><i class="bi bi-person-plus"></i> Cadastro</a></li>
+          <li class="px-4 fs-6 my-2"><a routerLink="/alterarSenha" class="text-decoration-none  text-dark"><i class="bi bi-lock"></i> Alterar senha </a></li>
+          <li class="px-4 fs-6 my-2"><a routerLink="/home"class="text-decoration-none text-dark"><i class="bi bi-house"></i><p>Home</p> </a></li>
+          <li class="px-4 fs-6 my-2"><a routerLink="/cadastro"class="text-decoration-none text-dark"><i class="bi bi-person-plus"></i> Cadastro</a></li>
         </ul>
       </div>
     </nav>

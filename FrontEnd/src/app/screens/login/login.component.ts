@@ -15,7 +15,7 @@ import { MsgErrorComponent } from '../comp/msg-error/msg-error.component';
 export class LoginComponent implements OnInit {
 
     formulario! : FormGroup
-    usuario : String | null = localStorage?.getItem('usuario')
+    usuario : string = localStorage?.getItem('usuario')?? ""
     loading : boolean = false;
     msgError : boolean = false;
 
