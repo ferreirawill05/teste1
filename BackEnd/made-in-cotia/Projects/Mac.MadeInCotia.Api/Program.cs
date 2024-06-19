@@ -39,7 +39,34 @@ public class Program
             };
         });
         builder.Services.AddControllers();
-        builder.Services.AddAuthorization();
+        builder.Services.AddAuthorization(options =>
+        {
+            options.AddPolicy("alterar", policy =>
+            {
+                policy.RequireClaim("alterar", "1");
+               
+            });
+
+            options.AddPolicy("cadastrar", policy =>
+            {
+                policy.RequireClaim("cadastrar", "2");
+                
+            });
+
+            options.AddPolicy("excluir", policy =>
+            {
+                policy.RequireClaim("excluir", "3");
+                
+            });
+
+            options.AddPolicy("master", policy =>
+            {
+                policy.RequireClaim("IdTipoUsuario", "1");
+                                                           
+            });
+
+        }); 
+
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(options =>
         {

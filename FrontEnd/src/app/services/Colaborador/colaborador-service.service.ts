@@ -38,7 +38,7 @@ export class ColaboradorService {
 
   CadastrarColaborador(colaborador : ColaboradorCadastro) : Observable<idColaborador>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
-    return this.http.post<idColaborador>(this.API + "colaboradores", colaborador, {headers})
+    return this.http.post<idColaborador>(this.API + "criar", colaborador, {headers})
   }
 
   GetMeColaborador() : Observable<any>{

@@ -45,7 +45,7 @@ namespace Mac.MadeInCotia.Api.Controllers
             }
         }
 
-        [Authorize]
+        /*[Authorize]
         [HttpPost]
         public IActionResult CreatePhone(TelefonesViewModel telefone)
         {
@@ -55,7 +55,7 @@ namespace Mac.MadeInCotia.Api.Controllers
                 return BadRequest();
             }
             return Ok(telefone);
-        }
+        }*/
 
         [Authorize]
         [HttpDelete]

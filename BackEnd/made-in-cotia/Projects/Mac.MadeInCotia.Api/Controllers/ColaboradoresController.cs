@@ -53,13 +53,13 @@ namespace Mac.MadeInCotia.Api.Controllers
         [HttpPost("/criar")]
         public IActionResult CreateUser(ColaboradorViewModel colaborador)
         {
-            ColaboradorViewModel usuario = _colaboradorService.CriarUsuario(colaborador);
-            if (usuario == null)
+            int usuario = _colaboradorService.CriarUsuario(colaborador);
+            if (usuario == 0)
             {
                 return BadRequest("Error");
             }
 
-            return Ok(colaborador);
+            return Ok(new {idColaborador = usuario});
         }
 
         [Authorize]

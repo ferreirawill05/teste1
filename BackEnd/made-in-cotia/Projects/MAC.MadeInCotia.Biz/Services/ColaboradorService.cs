@@ -2,6 +2,7 @@
 using FluentValidation;
 using FluentValidation.Results;
 using Mac.Common.Util.Core;
+using Mac.Common.Util.Core.Model;
 using Mac.MadeInCotia.Data.Context;
 using Mac.MadeInCotia.Data.Models;
 using Mac.MadeInCotia.Entities.Colaborador;
@@ -53,19 +54,20 @@ namespace MAC.MadeInCotia.Biz.Services
             }
         }
 
-        public ColaboradorViewModel CriarUsuario(ColaboradorViewModel colaborador)
+        public int CriarUsuario(ColaboradorViewModel colaborador)
         {
+            int idColaborador = 0;
             UsuarioValidator validator = new UsuarioValidator();
             ValidationResult resultado = _validation.Validate(colaborador);
 
-            if (!resultado.IsValid)
+            if (resultado.IsValid)
             {
                 
                 CF_Colaborador colaboradorBanco = new CF_Colaborador(
                     colaborador.IdTipoUsuario,
                     colaborador.Nome,
                     colaborador.Cpf,
-                    colaborador.NmUsuario,
+                    colaborador.Usuario,
                     Crypt.Encrypt(colaborador.Senha),
                     true,
                     DateTime.Now
@@ -75,10 +77,11 @@ namespace MAC.MadeInCotia.Biz.Services
                 _validation.ValidateAndThrow(colaborador);
                 _context.CF_Colaborador.Add(colaboradorBanco);
                 _context.SaveChanges();
+                idColaborador = colaboradorBanco.Id_Colaborador;
                 colaborador.Senha = string.Empty;
             }
 
-            return colaborador;
+            return idColaborador;
         } 
 
         public ColaboradorViewModel DeletarUsuario(ColaboradorViewModel colaborador)
@@ -111,7 +114,7 @@ namespace MAC.MadeInCotia.Biz.Services
             colaboradorBanco.Id_TipoUsuario = colaborador.IdTipoUsuario;
             colaboradorBanco.Nm_Nome = colaborador.Nome;
             colaboradorBanco.Ds_Cpf = colaborador.Cpf;
-            colaboradorBanco.Nm_Usuario = colaborador.NmUsuario;
+            colaboradorBanco.Nm_Usuario = colaborador.Usuario;
             colaboradorBanco.Ds_Senha = Crypt.Encrypt(colaborador.Senha);
             colaboradorBanco.Fl_Ativo = true;
             colaboradorBanco.Dt_Criacao = DateTime.Now;

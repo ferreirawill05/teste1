@@ -41,7 +41,7 @@ export class CadastrarColaboradorComponent implements OnInit {
   isMaster : boolean = false
   editar : boolean = false
   emailInvalido : boolean = false
-  idColaborador! : number 
+  idColaborador! : number
   EmailCadastrados : EmailCadastro[] = []
   TelefoneCadastrados : TelefoneCadastro[] = []
   ListaInvalidaEmail : boolean = true
@@ -119,7 +119,7 @@ export class CadastrarColaboradorComponent implements OnInit {
   // OBSERVABLES E CHAMADAS NA SERVICE
 
   // GetMe(){
-  //   this.serviceColaborador.GetMeColaborador().pipe(takeUntil(this.unSubscribe$)).subscribe({
+  //   this.serviceColaborador.GetMeColaborador().subscribe({
   //     next: (res) => {
   //       res.idTipoUsuario == 1 ? this.isMaster = true : this.isMaster = false
   //     },
@@ -278,7 +278,7 @@ export class CadastrarColaboradorComponent implements OnInit {
   }
 
   CadastrarEmail(idColaborador : number){
-    this.serviceEmail.CadastrarEmail(this.MockEmail, idColaborador).subscribe({
+    this.serviceEmail.CadastrarEmail(this.dataSourceEmail.data, idColaborador).subscribe({
       next: () => {
         this.route.navigate(['/cadastro'])
       },
@@ -286,7 +286,7 @@ export class CadastrarColaboradorComponent implements OnInit {
   }
 
   CadastrarTelefone(idColaborador : number){
-    this.serviceTelefone.CadastrarTelefone(this.MockTelefone, idColaborador).subscribe({
+    this.serviceTelefone.CadastrarTelefone(this.dataSourceTelefone.data, idColaborador).subscribe({
       next: () => {
         this.route.navigate(['/cadastro'])
       },

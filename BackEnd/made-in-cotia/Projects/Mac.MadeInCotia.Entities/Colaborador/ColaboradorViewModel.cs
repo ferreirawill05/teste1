@@ -6,7 +6,7 @@
         public int IdTipoUsuario { get; set; } 
         public string Nome { get; set; } = null!;
         public string Cpf { get; set; } = null!;
-        public string NmUsuario { get; set; } = null!;
+        public string Usuario { get; set; } = null!;
         public string Senha { get; set; } = null!;
     }
 }

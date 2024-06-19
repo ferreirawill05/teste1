@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mac.MadeInCotia.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+749a5621caffff1275028eae37b10b8d67387975")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37fc836863a21ac3d3f4a03e92b629278fa08d96")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mac.MadeInCotia.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mac.MadeInCotia.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

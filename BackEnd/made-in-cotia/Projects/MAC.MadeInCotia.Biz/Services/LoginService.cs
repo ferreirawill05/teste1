@@ -55,7 +55,7 @@ namespace MAC.MadeInCotia.Biz.Services
         }
 
         //Requisições do Token
-        private static ClaimsIdentity GenerateClaims(CF_Colaborador usuario)
+        /*private static ClaimsIdentity GenerateClaims(CF_Colaborador usuario)
         {
             var newClaimIdentify = new ClaimsIdentity();
 
@@ -66,26 +66,9 @@ namespace MAC.MadeInCotia.Biz.Services
 
             newClaimIdentify.AddClaim(new Claim("IdTipoUsuario", usuario.Id_TipoUsuario.ToString()));
 
-            foreach (var permissao in usuario.)
-            {
+           
 
-                if (permissao.IdPermissao == 1)
-                {
-                    newClaimIdentify.AddClaim(new Claim("alterar", "1"));
-                }
-                if (permissao.IdPermissao == 2)
-                {
-                    newClaimIdentify.AddClaim(new Claim("cadastrar", "2"));
-                }
-                if (permissao.IdPermissao == 3)
-                {
-                    newClaimIdentify.AddClaim(new Claim("excluir", "3"));
-                }
-
-            }
-            return newClaimIdentify;
-
-        }
+        }*/
 
     }
 }

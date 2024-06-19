@@ -59,7 +59,7 @@ namespace MAC.MadeInCotia.Biz.Services
             }
         }
 
-        public TelefonesViewModel CriarTelefone(TelefonesViewModel telefone)
+        /*public TelefonesViewModel CriarTelefone(TelefonesViewModel telefone)
         {
             TelefoneValidation TValidation = new TelefoneValidation();
             ValidationResult resultado = _validation.Validate(telefone);
@@ -82,7 +82,7 @@ namespace MAC.MadeInCotia.Biz.Services
                 telefone.DsNumero = string.Empty;
             }
             return (telefone);
-        }
+        }*/
 
         public TelefonesViewModel DeletarTelefone(TelefonesViewModel telefone)
         {
