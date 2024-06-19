@@ -1,13 +1,13 @@
 <app-header></app-header>
 
 <main class="container py-4 d-flex flex-column gap-4 ">
-  <form class="d-flex gap-4 flex-column">
-    <h2 class="fs-2 fw-600">Informações do Colaborador</h2>
+  <form class="w-100 d-flex gap-4 flex-column" [formGroup]="formulario">
+    <h2 class="fs-2 fw-600 ms-1 mb-3 mt-3">Informações do Colaborador</h2>
 
     <div class="w-100 bg-white px-5 py-4 rounded-4 d-flex flex-column gap-3">
       <div class="d-flex align-items-center justify-content-between gap-2 w-100">
-        <div class="d-flex align-items-center gap-2">
-          <i class="bi bi-person-vcard fs-2"></i>
+        <div class="d-flex align-items-center gap-2 ms-1">
+          <i class="material-icons">perm_identity</i>
           <span class="fs-5 fw-500">Informações Pessoais</span>
         </div>
 
@@ -17,31 +17,33 @@
       </div>
       <div class="row">
         <div class="col-6">
-          <div class="d-flex flex-column ">
-            <label class="fs-7" for="nome">Nome do Colaborador:</label>
-            <input class="form-control fundo-cinza py-2" type="text"  name="nome" formControlName="nome" id="nome"  readonly="true">
-          </div>
+          <label for="">Nome:</label>
+          <mat-form-field class="input-sizing">
+            <div class="d-flex flex-row align-items-center">
+              <input name="nome" id="nome" formControlName="nome" readonly="true" matInput placeholder="Nome" type="text" >
+            </div>
+          </mat-form-field>
         </div>
-
         <div class="col-6">
-          <div class="d-flex flex-column ">
-            <label class="fs-7" for="cpf">CPF:</label>
-            <input class="form-control fundo-cinza py-2" type="text" name="cpf" id="cpf" formControlName="cpf" readonly="true">
-          </div>
+          <label for="">CPF:</label>
+          <mat-form-field class="input-sizing">
+            <div class="d-flex flex-row align-items-center">
+              <input name="cpf" id="cpf" formControlName="cpf" readonly="true" matInput placeholder="CPF" type="text" >
+            </div>
+          </mat-form-field>
         </div>
       </div>
-
     </div>
 
     <div class="w-100 bg-white px-3 py-4 px-5 rounded-4 d-flex flex-column gap-3">
-      <div class="d-flex align-items-center gap-2">
-        <i class="bi bi-telephone fs-3"></i>
+      <div class="d-flex align-items-center gap-2 ms-1">
+        <i class="material-icons">contact_phone</i>
         <span class="fs-5 fw-500">Telefone para Contato</span>
       </div>
 
       <!-- TABELA TELEFONE -->
       <div>
-        <div class="border border-2 border-dark rounded-4  px-4">
+        <div class="rounded-2 px-4">
           <table mat-table [dataSource]="dataSourceTelefone" class="mat-elevation-z8  shadow-none overflow-hidden">
             <ng-container matColumnDef="Apelido">
               <th mat-header-cell *matHeaderCellDef> Apelido </th>
@@ -67,14 +69,14 @@
 
 
     <div class="w-100 bg-white px-3 py-4 px-5 rounded-4 d-flex flex-column gap-3">
-      <div class="d-flex align-items-center gap-2">
-        <i class="bi bi-envelope-at fs-3"></i>
+      <div class="d-flex align-items-center gap-2 ms-1">
+        <i class="material-icons">alternate_email</i>
         <span class="fs-5 fw-500">E-mails para Contato:</span>
       </div>
 
       <div>
         <!-- TABELA Email -->
-        <div class="border border-2 border-dark rounded-4 px-4">
+        <div class="rounded-2 px-4">
           <table mat-table [dataSource]="dataSourceEmail" class="mat-elevation-z8  shadow-none overflow-hidden">
             <ng-container matColumnDef="Email">
               <th mat-header-cell *matHeaderCellDef> E-mail </th>
@@ -96,42 +98,40 @@
     </div>
 
     <div class="w-100 bg-white px-5 py-4 rounded-4 d-flex flex-column gap-3">
-      <div class="d-flex align-items-center gap-2">
-        <i class="bi bi-person-vcard fs-2"></i>
+      <div class="d-flex align-items-center gap-2 ms-1">
+        <i class="material-icons">lock</i>
         <span class="fs-5 fw-500">Informações Pessoais</span>
       </div>
-      <div class="row">
-        <div class="col-4">
+      <div class="row w-100 justify-content-between">
+        <div class="col-3">
           <div class="d-flex flex-column ">
-            <label class="fs-7" for="usuario">Usuario:</label>
-            <input class="form-control fundo-cinza py-2" type="text"  name="usuario" id="usuario" formControlName="usuario" readonly="true">
+            <label class="fs-7  ms-0 mb-1" for="usuario">Usuario:</label>
+            <input class="form-control py-2" type="text"  name="usuario" id="usuario" formControlName="usuario" readonly="true">
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="d-flex flex-column ">
+            <label class="fs-7 ms-0 mb-1" for="perfil">Perfil de acesso:</label>
+            <input class="form-control text-center py-2" type="text" name="perfil" formControlName="perfil" readonly="true">
           </div>
         </div>
 
         <div class="col-4">
-          <div class="d-flex flex-column ">
-            <label class="fs-7" for="perfil">Perfil de acesso:</label>
-            <input class="form-control border border-dark text-center py-2" type="text" name="perfil" formControlName="perfil" readonly="true">
-          </div>
-        </div>
-
-        <div class="col-4">
-          <span class="fs-6">Permissões:</span>
+          <span class="fs-6 mb-2">Permissões:</span>
           <div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline mb-2">
               <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="editar" formControlName="permissaoEditar" onclick="return false;">
               <label class="form-check-label fs-small" for="inlineCheckbox1">Editar Cadastro</label>
             </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" value="excluir" id="defaultCheck1" formControlName="permissaoExcluir" onclick="return false;">
-              <label class="form-check-label fs-small" for="defaultCheck1">Excluir Cadastro</label>
+            <div class="form-check form-check-inline  ms-5">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="cadastrar" formControlName="permissaoCadastrar" onclick="return false;">
+              <label class="form-check-label fs-small" for="inlineCheckbox2">Cadastrar Funcionários</label>
             </div>
-
           </div>
-
-          <div class="form-check ">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="cadastrar" formControlName="permissaoCadastrar" onclick="return false;">
-            <label class="form-check-label fs-small" for="inlineCheckbox2">Cadastrar Funcionários</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="excluir" id="defaultCheck1" formControlName="permissaoExcluir" onclick="return false;">
+            <label class="form-check-label fs-small" for="defaultCheck1">Excluir Cadastro</label>
           </div>
         </div>
       </div>

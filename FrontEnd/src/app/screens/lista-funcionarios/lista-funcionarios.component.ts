@@ -53,35 +53,19 @@ permissaoCadastrar : boolean = false
     console.log(pagina);
 
     this.service.ListarColaboradores(pagina).subscribe({
-      next: (resposta: ColaboradorListado) => {
-        console.log(resposta)
-        // Initialize colaboradores as an empty array
-        this.colaboradores = [];
-
-        // Check if resposta.colaboradores.$values is an array
-
-          this.colaboradores = resposta.colaboradores;
-
-          // Process each element in the array
-          this.colaboradores.forEach(element => {
-            let date = element.dtCriacao.split(' ')[0];
-            let dateArray = date.split('/');
-            element.dtCriacao = `${dateArray[1]}/${dateArray[0]}/${dateArray[2]}`;
-          });
-
-          // Set the data source for the table
-          this.dataSource = new MatTableDataSource<Colaboradores>(this.colaboradores);
-
-        // Log the processed colaboradores array
+      next: (resposta : ColaboradorListado) => {
+        this.colaboradores = resposta.colaboradores
         console.log(this.colaboradores);
+        // this.colaboradores.forEach(element => {
+        //   let date = element.dtCriacao.split(' ')[0]
+        //   let dateArray = date.split('/')
+        //   element.dtCriacao = dateArray[1] + '/' + dateArray[0] + '/' + dateArray[2]
+        //})
 
-        // Set the quantidadeColaboradores
-        this.quantidadeColaboradores = resposta.quantidade;
+        this.quantidadeColaboradores = resposta.numero
+        this.dataSource = new MatTableDataSource<Colaboradores>(this.colaboradores);
       },
-      error: (e) => {
-        console.log(e);
-      }
-    });
+    })
   }
 
   onPaginateChange(event : PageEvent) {
@@ -109,5 +93,9 @@ permissaoCadastrar : boolean = false
     let rota = 'detalhes/' + colaborador.idColaborador
     this.router.navigate([rota])
   }
+
+  // Debug(){
+  //   console.log("teste")
+  // }
 
 }

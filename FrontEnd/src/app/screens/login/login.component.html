@@ -4,15 +4,16 @@
       <h1 class="fs-3 bold">Cadastro de Funcionário</h1>
       <p>Acesse com usuário e senha</p>
       <form class="d-flex flex-column justify-content-between form-sizing align-items-center" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <span class="fs-small text-danger text-center" *ngIf="msgError">Verifique as senhas e tente novamente</span>
           <label class="ml-auto" for="">Digite seu Usuário</label>
           <mat-form-field class="input-sizing" appearance="fill">
               <mat-label>Usuário</mat-label>
-              <input formControlName="usuario" matInput placeholder="Ex. Batman">
+              <input formControlName="usuario" matInput placeholder="Ex: Nome">
             </mat-form-field>
-          <label for="">Digite sua Senha</label>
+          <label>Digite sua Senha</label>
           <mat-form-field class="input-sizing" appearance="fill">
               <mat-label>Senha</mat-label>
-              <input formControlName="senha" matInput placeholder="Ex. 1234">
+              <input formControlName="senha" matInput placeholder="Ex: 1234">
             </mat-form-field>
           <div class="d-flex flex-center check-input">
               <input class="check-input input" type="checkbox">

@@ -1,5 +1,4 @@
 *{
-    margin: auto;
     padding: 0;
 }
 
@@ -28,7 +27,7 @@ body{
 }
 
 .input-sizing{
-    width: 28rem;
+    width: 26rem;
 }
 
 .custom-input{
@@ -52,4 +51,8 @@ body{
     margin-bottom: 15px;
     height: 40px;
     width: 130px;
+}
+
+.warn{
+  font-size: 13px;
 }

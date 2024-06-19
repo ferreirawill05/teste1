@@ -41,14 +41,14 @@ export class ColaboradorService {
     return this.http.post<idColaborador>(this.API + "colaboradores", colaborador, {headers})
   }
 
-  // GetMeColaborador() : Observable<GetMeColaborador>{
-  //   const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
-  //   return this.http.get<GetMeColaborador>(this.API + "colaboradores/me", {headers})
-  // }
+  GetMeColaborador() : Observable<any>{
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
+    return this.http.get<any>(this.API + "colaboradores/me", {headers})
+  }
 
   ConsultaPorId(id : number) : Observable<ColaboradorDetalhes>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem("token")}`);
-    return this.http.get<ColaboradorDetalhes>(this.API + "colaboradores/" + id, {headers})
+    return this.http.get<ColaboradorDetalhes>(this.API + "api/colaboradores/" + id, {headers})
   }
 
   EditarColaborador(colaborador : ColaboradorEditar, id : number){
@@ -61,11 +61,11 @@ export class ColaboradorService {
     return this.http.delete<ColaboradorDetalhes>(this.API + "colaboradores/" + id, {headers})
   }
 
-  // VerificaPermissao(idPermissao: number): Observable<boolean> {
-  //   return this.GetMeColaborador().pipe(
-  //     map(resposta => resposta.permissoes.some(permissao => permissao.idPermissao === idPermissao)),
-  //     catchError(() => of(false))
-  //   );
-  // }
+  VerificaPermissao(idPermissao: number): Observable<boolean> {
+    return this.GetMeColaborador().pipe(
+      map(resposta => resposta.permissoes.some()),
+      catchError(() => of(false))
+    );
+  }
 
 }

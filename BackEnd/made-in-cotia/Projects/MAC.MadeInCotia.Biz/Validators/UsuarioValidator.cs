@@ -6,6 +6,7 @@ namespace MAC.MadeInCotia.Biz.Validators
 {
     public class UsuarioValidator : AbstractValidator<ColaboradorViewModel>
     {
+
         public UsuarioValidator()
         {
             RuleFor(colaborador => colaborador.Senha)

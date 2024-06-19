@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Mac.MadeInCotia.Api.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class EmailsController : ControllerBase
+    [ApiController] 
+    public class EmailsController : BaseApiController
     {
         private readonly EmailService _emailService;
 

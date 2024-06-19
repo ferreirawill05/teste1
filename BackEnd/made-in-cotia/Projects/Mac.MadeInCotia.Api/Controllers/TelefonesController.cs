@@ -7,7 +7,7 @@ namespace Mac.MadeInCotia.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TelefonesController : ControllerBase
+    public class TelefonesController : BaseApiController
     {
         private readonly TelefoneService _telefoneService;
 
@@ -47,7 +47,7 @@ namespace Mac.MadeInCotia.Api.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult CreatePhone (TelefonesViewModel telefone)
+        public IActionResult CreatePhone(TelefonesViewModel telefone)
         {
             TelefonesViewModel colaboradorTelefone = _telefoneService.CriarTelefone(telefone);
             if (colaboradorTelefone == null)

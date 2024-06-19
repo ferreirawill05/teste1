@@ -8,15 +8,15 @@
         </div>
       </div>
       <div class="dropdown">
-          <button *ngIf="nome" class="btn btn-secondary dropdown-toggle rounded-5 px-3 py-1 bg-danger text-white fs-4 fw-bold" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <button *ngIf="nome" class="btn btn-secondary rounded-5 px-3 py-1 bg-danger  fs-4 fw-bold" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           </button>
           <button class="ms-2 fs-5 fw-600 text-decoration-none text-white border-0 bg-transparent">{{nome}}</button>
 
         <ul class="dropdown-menu py-4" aria-labelledby="dropdownMenuButton1">
-          <li class="px-4 fs-6 my-2"><a (click)="Logout()" class="text-decoration-none text-danger"><i class="bi bi-box-arrow-right"></i> Sair</a></li>
           <li class="px-4 fs-6 my-2"><a routerLink="/alterarSenha" class="text-decoration-none  text-dark"><i class="bi bi-lock"></i> Alterar senha </a></li>
-          <li class="px-4 fs-6 my-2"><a routerLink="/home"class="text-decoration-none text-dark"><i class="bi bi-house"></i><p>Home</p> </a></li>
           <li class="px-4 fs-6 my-2"><a routerLink="/cadastro"class="text-decoration-none text-dark"><i class="bi bi-person-plus"></i> Cadastro</a></li>
+          <li class="px-4 fs-6 my-2"><a routerLink="/home"class="text-decoration-none text-dark"><i class="bi bi-house"></i><p>Home</p> </a></li>
+          <li class="px-4 fs-6 my-2"><a (click)="Logout()" class="text-decoration-none text-danger"><i class="bi bi-box-arrow-right"></i> Sair</a></li>
         </ul>
       </div>
     </nav>

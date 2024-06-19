@@ -1,3 +1,4 @@
+import { ColaboradorCadastro } from './../../../interfaces/ColaboradorCadastro';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
@@ -10,7 +11,7 @@ import { ColaboradorService } from 'src/app/services/Colaborador/colaborador-ser
 })
 export class HeaderComponent implements OnInit {
 
-  nome : string = "william"
+  nome = "sss"
 
   constructor(
     private router: Router,
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    //this.GetMe()
+    // this.GetMe()
   }
 
   // GetMe(){
@@ -39,15 +40,16 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  // VerificaPermissaoEditar(){
-  //   return this.serviceColaborador.VerificaPermissao(1).pipe(
-  //     map(hasPermission => {
-  //       if (hasPermission) {
-  //         console.log(true, hasPermission);
-  //       } else {
-  //         console.log(false, hasPermission);
-  //       }
-  //     })
-  //   );
+  VerificaPermissaoEditar(){
+    return this.serviceColaborador.VerificaPermissao(1).pipe(
+      map(hasPermission => {
+        if (hasPermission) {
+          console.log(true, hasPermission);
+        } else {
+          console.log(false, hasPermission);
+        }
+      })
+    );
   }
+}
 

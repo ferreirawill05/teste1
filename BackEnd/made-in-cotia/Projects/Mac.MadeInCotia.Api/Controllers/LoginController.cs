@@ -7,7 +7,7 @@ namespace Mac.MadeInCotia.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginController : ControllerBase
+    public class LoginController : BaseApiController
     {
         private readonly LoginService _loginService;
         private readonly MacMadeInCotiaContext _context;

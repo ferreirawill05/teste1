@@ -11,22 +11,27 @@
         <img class="w-25" src="../../assets/logo.png">
         <h1 class="fs-3 bold">Alterar Senha</h1>
         <form class="d-flex flex-column justify-content-between form-sizing align-items-center" action="">
-            <!-- <label for="">Senha Atual:</label>
-            <input class="w-50 rounded" type="password"> -->
             <mat-form-field class="input-sizing" appearance="fill">
                 <mat-label class="">Senha Atual:</mat-label>
-                <input matInput placeholder="Ex. Batman">
+                <input matInput placeholder="Senha Atual:">
               </mat-form-field>
               <mat-form-field class="input-sizing" appearance="fill">
                 <mat-label >Nova Senha:</mat-label>
-                <input class="fs-" matInput placeholder="Ex. Batman">
+                <input type="password" formControlName="senhaNovaTroca" name="senhaNovaTroca" id="senhaNovaTroca" matInput placeholder="Nova Senha:">
+                <span class="fs-very-small text-danger" *ngIf="formulario?.get('senhaNovaTroca')?.hasError('required') && formulario.get('senhaNovaTroca')?.touched">* O campo de nova senha é obrigatório.</span>
+                <span class="fs-very-small text-danger" *ngIf="formulario?.get('senhaNovaTroca')?.hasError('erroCaractereEspecial') && formulario.get('senhaNovaTroca')?.touched">* Sua nova senha precisa ter um caraterer especial</span>
+                <span class="fs-very-small text-danger" *ngIf="formulario?.get('senhaNovaTroca')?.hasError('erroMaiuscula') && formulario.get('senhaNovaTroca')?.touched">* Sua nova senha deve conter uma letra maiuscula </span>
+                <span class="fs-very-small text-danger" *ngIf="formulario?.get('senhaNovaTroca')?.hasError('erroNumero') && formulario.get('senhaNovaTroca')?.touched">* Sua nova senha deve conter um numero</span>
+                <span class="fs-very-small text-danger" *ngIf="formulario?.get('senhaNovaTroca')?.hasError('minlength') && formulario.get('senhaNovaTroca')?.touched">* Sua nova senha deve conter no minimo 8 caracteres </span>
               </mat-form-field>
               <mat-form-field class="input-sizing" appearance="fill">
                 <mat-label>Confirme a nova senha:</mat-label>
-                <input matInput placeholder="Ex. Batman">
+                <input type="password" formControlName="confirmaSenhaTroca" name="confirma" id="confirma" matInput placeholder="Confirme Nova Senha:">
+                <span class="fs-very-small text-danger" *ngIf="formulario?.errors?.['erroSenhasDiferentes'] && formulario.get('confirmarSenhaTroca')?.touched">* O campo de confirmação de senha e o campo de senha precisam ser iguais</span>
+          <span class="fs-very-small text-danger" *ngIf="formulario?.get('confirmarSenhaTroca')?.hasError('required') && formulario.get('confirmarSenhaTroca')?.touched">* O campo de confirmação de senha é obrigatório.</span>
               </mat-form-field>
         </form>
-        <button class="m-4 button" mat-flat-button color="primary">Alterar Senha</button>
+        <button class="m-4 button" mat-flat-button color="primary"><mat-spinner *ngIf="loading" class="loading me-2"></mat-spinner>Alterar Senha</button>
     </div>
 </body>
-</html> 
+</html>

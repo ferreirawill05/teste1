@@ -1,16 +1,21 @@
 ﻿using Dapper;
+using FluentValidation;
 using Mac.MadeInCotia.Data.Context;
 using Mac.MadeInCotia.Data.Models;
 using Mac.MadeInCotia.Entities.Emails;
+using MAC.MadeInCotia.Biz.Validators;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using System.ComponentModel.DataAnnotations;
 
 namespace MAC.MadeInCotia.Biz.Services
 {
     public class EmailService
     {
+        private readonly EmailValidation _validation = new();
         private readonly IConfiguration _configuration;
         private readonly MacMadeInCotiaContext _context;
+
         public EmailService (IConfiguration configuration, MacMadeInCotiaContext context) 
         {
             _configuration = configuration;
@@ -42,19 +47,29 @@ namespace MAC.MadeInCotia.Biz.Services
 
         public EmailsViewModel CriarEmail(EmailsViewModel email)
         {
-            CF_ColaboradorEmail emailBanco = new CF_ColaboradorEmail
-            (
-                email.DsEmail,
-                email.IdColaborador,
-                true,
-                true,
-                DateTime.Now
-            );
-            _context.CF_ColaboradorEmail.Add( emailBanco );
-            _context.SaveChanges();
-            return (email);
-           
+            EmailValidation _validation = new EmailValidation();
+            FluentValidation.Results.ValidationResult resultado = _validation.Validate(email);
+
+            if (!resultado.IsValid)
+            {
+                CF_ColaboradorEmail emailBanco = new CF_ColaboradorEmail
+                (
+                    email.DsEmail,
+                    email.IdColaborador,
+                    true,
+                    true,
+                    DateTime.Now
+                );
+
+                _validation.ValidateAndThrow(email);
+                _context.CF_ColaboradorEmail.Add(emailBanco);
+                _context.SaveChanges();
+                email.DsEmail = string.Empty;
+            }
+
+            return email;
         }
+
 
         public EmailsViewModel DeletarEmail(EmailsViewModel email)
         {

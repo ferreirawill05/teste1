@@ -58,7 +58,7 @@ export class DetalhesColaboradorComponent implements OnInit{
   //     next: (res) => {
   //       this.permissaoEditar =  res.permissoes.findIndex(element => element.idPermissao == 1) != -1
   //       this.permissaoRemover =  res.permissoes.findIndex(element => element.idPermissao == 3) != -1
-  //     }, 
+  //     },
   //     error: () => {
   //       localStorage.clear()
   //       this.route.navigate(['/login'])
@@ -82,7 +82,7 @@ export class DetalhesColaboradorComponent implements OnInit{
   }
 
   AtualizandoFormulario(colaborador : ColaboradorDetalhes){
-    colaborador.permissoes.forEach(permissao => {
+    colaborador?.permissoes?.forEach(permissao => {
       if (permissao.idPermissao == 1) {
         this.formulario.controls['permissaoEditar'].setValue(true)
       }
@@ -110,5 +110,5 @@ export class DetalhesColaboradorComponent implements OnInit{
   //     },
   //     panelClass: 'dialog-container-alterar-senha',
   //   })
-  // }
+  //}
 }

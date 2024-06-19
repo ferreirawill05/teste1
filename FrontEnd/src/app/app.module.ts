@@ -29,6 +29,7 @@ import { MsgErrorComponent } from './screens/comp/msg-error/msg-error.component'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -81,6 +82,7 @@ const routes : Routes = [
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     NgxMaskDirective,
+    FormsModule
 
   ],
   providers: [provideNgxMask({})],

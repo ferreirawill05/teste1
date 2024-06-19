@@ -1,27 +1,27 @@
 ﻿using Dapper;
+using FluentValidation;
+using FluentValidation.Results;
 using Mac.Common.Util.Core;
 using Mac.MadeInCotia.Data.Context;
 using Mac.MadeInCotia.Data.Models;
 using Mac.MadeInCotia.Entities.Colaborador;
 using Mac.MadeInCotia.Entities.Emails;
 using MAC.MadeInCotia.Biz.Converter;
+using MAC.MadeInCotia.Biz.Validators;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using System.ComponentModel.DataAnnotations;
+using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace MAC.MadeInCotia.Biz.Services
 {
     public class ColaboradorService
-    { 
-
+    {
+        private readonly UsuarioValidator _validation = new();
         private readonly IConfiguration _configuration;
         private readonly MacMadeInCotiaContext _context;
-        
+
         public ColaboradorService(IConfiguration configuration, MacMadeInCotiaContext context)
         {
             _configuration = configuration;
@@ -31,46 +31,55 @@ namespace MAC.MadeInCotia.Biz.Services
 
         public IEnumerable<ColaboradorViewModel> ConsultaPorId(int id)
         {
-/*          var connectionString = _configuration.GetConnectionString("DefaultConnection");*/
-            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"))) 
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
                 var colaborador = @"SELECT CF_Colaborador.Id_TipoUsuario AS IdTipoUsuario, CF_Colaborador.Nm_Nome AS Nome, CF_Colaborador.Ds_Cpf AS Cpf, CF_Colaborador.Nm_Usuario AS NmUsuario, CF_Colaborador.Ds_Senha AS Senha, CF_Colaborador.Fl_Ativo AS FlAtivo
                 FROM CF_Colaborador
-                WHERE CF_Colaborador.Id_TipoUsuario = @id and CF_Colaborador.Fl_Ativo = 1";
+                WHERE CF_Colaborador.Id_Colaborador = @id and CF_Colaborador.Fl_Ativo = 1";
 
-                return connection.Query<ColaboradorViewModel>(colaborador, new {id = id});
+                return connection.Query<ColaboradorViewModel>(colaborador, new { id = id });
             }
         }
 
-        public IEnumerable<ColaboradorViewModel> ConsultaTodos()
+
+        public IEnumerable<ColaboradorListagemViewModel> ConsultaTodos()
         {
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
                 var colaborador = @"SELECT CF_Colaborador.Id_TipoUsuario AS IdTipoUsuario, CF_Colaborador.Nm_Nome AS Nome, CF_Colaborador.Ds_Cpf AS Cpf, CF_Colaborador.Nm_Usuario AS NmUsuario, CF_Colaborador.Ds_Senha AS Senha, CF_Colaborador.Fl_Ativo AS FlAtivo
                 FROM CF_Colaborador";
 
-                return connection.Query<ColaboradorViewModel>(colaborador);
+                return connection.Query<ColaboradorListagemViewModel>(colaborador);
             }
         }
 
-
-        public ColaboradorViewModel CriarUsuario(ColaboradorViewModel colaborador) 
+        public ColaboradorViewModel CriarUsuario(ColaboradorViewModel colaborador)
         {
-            CF_Colaborador colaboradorBanco = new CF_Colaborador(
-                colaborador.IdTipoUsuario,
-                colaborador.Nome,
-                colaborador.Cpf,
-                colaborador.NmUsuario,
-                Crypt.Encrypt(colaborador.Senha),
-                true,
-                DateTime.Now
-            ) ;
+            UsuarioValidator validator = new UsuarioValidator();
+            ValidationResult resultado = _validation.Validate(colaborador);
 
-            _context.CF_Colaborador.Add( colaboradorBanco );
-            _context.SaveChanges();
-            colaborador.Senha = string.Empty;
-            return (colaborador);                      
-        }
+            if (!resultado.IsValid)
+            {
+                
+                CF_Colaborador colaboradorBanco = new CF_Colaborador(
+                    colaborador.IdTipoUsuario,
+                    colaborador.Nome,
+                    colaborador.Cpf,
+                    colaborador.NmUsuario,
+                    Crypt.Encrypt(colaborador.Senha),
+                    true,
+                    DateTime.Now
+                );
+
+
+                _validation.ValidateAndThrow(colaborador);
+                _context.CF_Colaborador.Add(colaboradorBanco);
+                _context.SaveChanges();
+                colaborador.Senha = string.Empty;
+            }
+
+            return colaborador;
+        } 
 
         public ColaboradorViewModel DeletarUsuario(ColaboradorViewModel colaborador)
         {
@@ -104,7 +113,7 @@ namespace MAC.MadeInCotia.Biz.Services
             colaboradorBanco.Ds_Cpf = colaborador.Cpf;
             colaboradorBanco.Nm_Usuario = colaborador.NmUsuario;
             colaboradorBanco.Ds_Senha = Crypt.Encrypt(colaborador.Senha);
-            colaboradorBanco.Fl_Ativo = true; // Assuming you want to set it active on update as well
+            colaboradorBanco.Fl_Ativo = true;
             colaboradorBanco.Dt_Criacao = DateTime.Now;
 
             _context.CF_Colaborador.Update(colaboradorBanco);
@@ -130,19 +139,6 @@ namespace MAC.MadeInCotia.Biz.Services
 
             return colaborador;
         }
-
-        /*public ColaboradorViewModel AtualizarSenha(ColaboradorViewModel colaborador)
-        {
-            var colaboradorBanco = _context.CF_Colaborador.Find(colaborador.Senha);
-            if (colaboradorBanco == null) throw new ArgumentException("Error");
-
-            colaboradorBanco.Ds_Senha = Crypt.Encrypt(colaborador.Senha);
-
-            _context.CF_Colaborador.Update(colaboradorBanco);
-            _context.SaveChanges();
-
-            return colaborador;
-        }*/
 
         // Método gerar TOKEN
 

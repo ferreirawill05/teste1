@@ -1,63 +1,74 @@
 <app-header></app-header>
 
 <main class="container py-4 d-flex flex-column gap-4 ">
-  <form class="d-flex gap-4 flex-column" [formGroup]="formulario" (submit)="editar ? AlterarColaborador($event) : CadastrarColaborador($event)">
+  <form class="d-flex col-10 gap-4 flex-column" [formGroup]="formulario" (submit)="editar ? AlterarColaborador($event) : CadastrarColaborador($event)">
     <h2 class="fs-2 fw-600">{{editar ? 'Editar Colaborador' : 'Cadastrar Colaborador'}}</h2>
 
     <div class="w-100 bg-white px-5 py-4 rounded-4 d-flex flex-column gap-3">
       <div class="d-flex align-items-center justify-content-between gap-2 w-100">
-        <div class="d-flex align-items-center gap-2">
-          <i class="bi bi-person-vcard fs-2"></i>
+        <div class="ms-0 d-flex align-items-center gap-2">
+          <i class="material-icons fs-2 ">perm_identity</i>
           <span class="fs-5 fw-500">Informações Pessoais</span>
         </div>
 
-        <a routerLink="{{editar ? '/detalhes/'+ idColaborador : '/cadastro'}}">
-          <i class="bi bi-x-circle fs-4 hover-arrow text-secondary"></i>
+        <a class="me-0" routerLink="{{editar ? '/detalhes/'+ idColaborador : '/cadastro'}}">
+          <i class="fs-4 material-icons text-secondary">arrow_back</i>
         </a>
       </div>
-      <div class="row">
-        <div class="col-6">
-          <div class="d-flex flex-column ">
-            <label class="fs-7" for="nome">*Nome do Colaborador:</label>
-            <input class="form-control fundo-cinza py-2" type="text"  name="nome" formControlName="nome" id="nome" placeholder="Ex: João Santos">
-          </div>
-          <span *ngIf="formulario?.get('nome')?.hasError('required') && formulario.get('nome')?.touched" class="text-danger fs-small">* O campo de nome precisa ser preenchido</span>
-        </div>
-
-        <div class="col-6">
-          <div class="d-flex flex-column ">
-            <label class="fs-7" for="cpf">*CPF:</label>
-            <input class="form-control fundo-cinza py-2" ngClass="{{editar && 'lock-input'}}"  mask="000.000.000-00" type="text" name="cpf" id="cpf" formControlName="cpf" placeholder="Ex: 123.456.789-10" [readOnly]="editar" >
-            <span *ngIf="formulario?.get('cpf')?.hasError('required') && formulario.get('cpf')?.touched" class="text-danger fs-small">* O campo de CPF precisa ser preenchido</span>
-            <span *ngIf="formulario?.get('cpf')?.hasError('minlength') && formulario.get('cpf')?.touched" class="text-danger fs-small">* O CPF precisa ter 11 digitos</span>
-            <span *ngIf="formulario?.get('cpf')?.hasError('cpfInvalid') && formulario.get('cpf')?.touched" class="text-danger fs-small">* O CPF digitado é invalido</span>
-
+      <div class="container-fluid">
+        <div class="row justify-content-between">
+          <div class="col-5 m-0 d-flex align-items-start">
+            <div class="w-100 d-flex flex-column align-items-start">
+              <label class="mb-2 fs-7 ms-0" for="nome">*Nome do Colaborador:</label>
+              <mat-form-field class="input-sizing">
+                <input matInput type="text" class="w-100" name="nome" formControlName="nome" id="nome" placeholder="Ex: João Santos">
+              </mat-form-field>
+              <span *ngIf="formulario?.get('nome')?.hasError('required') && formulario.get('nome')?.touched" class="text-danger warn ms-0">* O campo de nome precisa ser preenchido</span>
+            </div>
           </div>
 
-        </div>
+          <div class="col-5 me-0 d-flex justify-content-end align-items-start">
+            <div class="w-100 d-flex flex-column m-0 align-items-start">
+              <label class="fs-7 mb-2 ms-0" for="cpf">*CPF:</label>
+              <mat-form-field class="input-sizing">
+                <input matInput class="" ngClass="{{editar && 'lock-input'}}"  mask="000.000.000-00" type="text" name="cpf" id="cpf" formControlName="cpf" placeholder="Ex: 123.456.789-10" [readOnly]="editar" >
+              </mat-form-field>
+              <span *ngIf="formulario?.get('cpf')?.hasError('required') && formulario.get('cpf')?.touched" class="text-danger warn ms-0">* O campo de CPF precisa ser preenchido</span>
+              <span *ngIf="formulario?.get('cpf')?.hasError('minlength') && formulario.get('cpf')?.touched" class="text-danger warn ms-0">* O CPF precisa ter 11 digitos</span>
+              <span *ngIf="formulario?.get('cpf')?.hasError('cpfInvalid') && formulario.get('cpf')?.touched" class="text-danger warn ms-0">* O CPF digitado é invalido</span>
+            </div>
+          </div>
       </div>
+      </div>
+
 
     </div>
 
     <div class="w-100 bg-white px-3 py-4 px-5 rounded-4 d-flex flex-column gap-3">
-      <div class="d-flex align-items-center gap-2">
-        <i class="bi bi-telephone fs-3"></i>
+      <div class="ms-0 d-flex align-items-center gap-2">
+        <i class="material-icons fs-2">contact_phone</i>
         <span class="fs-5 fw-500">Telefone para Contato</span>
       </div>
 
       <!-- TABELA TELEFONE -->
       <div>
-        <div class="border border-2 border-dark rounded-top-4  px-4 border-bottom-0">
-          <table mat-table [dataSource]="dataSourceTelefone" class="mat-elevation-z8  shadow-none overflow-hidden">
+        <div class="">
+          <table mat-table [dataSource]="dataSourceTelefone" class="mat-elevation-z3 rounded overflow-hidden">
             <ng-container matColumnDef="Apelido">
               <th mat-header-cell *matHeaderCellDef> Apelido </th>
-              <td mat-cell *matCellDef="let element"><input maxlength="300" placeholder="exemplo" class="reset-input" type="text" value="{{element.apelido}}" id="{{'apelidoTelefone' + element.idTelefone}}" (change)="EditarTelefone(element.idTelefone)"></td>
+              <td mat-cell *matCellDef="let element">
+                <mat-form-field appearance="outline">
+                  <input matInput maxlength="300" placeholder="exemplo" class="reset-input" type="text" value="{{element.apelido}}" id="{{'apelidoTelefone' + element.idTelefone}}" (change)="EditarTelefone(element.idTelefone)">
+                </mat-form-field>
+              </td>
             </ng-container>
 
             <ng-container matColumnDef="Telefone">
               <th mat-header-cell *matHeaderCellDef> Telefone </th>
               <td mat-cell *matCellDef="let element">
-                <input placeholder="{{(element.numero && editar ? element.numero :'Ex: (00) 00000-0000')}}" (click)="editar && AtribuirValorInput(element.idTelefone)" (dropSpecialCharacters)="true" class="reset-input w-100" type="text"  [value]="element.numero "mask="(00) 00000-0000"  id="{{'telefone' +element.idTelefone}}"  (keyup)="EditarTelefone(element.idTelefone)">
+                <mat-form-field appearance="outline">
+                  <input matInput placeholder="{{(element.numero && editar ? element.numero :'Ex: (00) 00000-0000')}}" (click)="editar && AtribuirValorInput(element.idTelefone)" (dropSpecialCharacters)="true" class="reset-input w-100" type="text"  [value]="element.numero "mask="(00) 00000-0000"  id="{{'telefone' + element.idTelefone}}"  (keyup)="EditarTelefone(element.idTelefone)">
+                </mat-form-field>
                 <span id="{{'erroNumero' + element.idTelefone}}" class='fs-very-small d-none error'>Numero inválido!</span>
               </td>
             </ng-container>
@@ -69,97 +80,105 @@
 
             <ng-container matColumnDef="Excluir">
               <th mat-header-cell *matHeaderCellDef> </th>
-              <td mat-cell *matCellDef="let element"> <button class="btn" (click)="RemoverTelefone(element.idTelefone, $event)"><i class="bi bi-trash fs-4"></i></button> </td>
+              <td mat-cell *matCellDef="let element"> <button class="btn" (click)="RemoverTelefone(element.idTelefone, $event)"><i class="text-danger material-icons fs-4">do_not_disturb</i></button></td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumnsTelefone"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumnsTelefone;"></tr>
           </table>
+          <button class="btn w-100 text-secondary text-start fs-very-small mt-3" (click)="AdicionarTelefone($event)"> + Adicionar Numero de Telefone</button>
         </div>
-        <button class="btn w-100 border border-2 border-dark rounded-bottom-4 px-4 border-top-0 rounded-top-0 text-secondary text-start fs-very-small" (click)="AdicionarTelefone($event)"> + Adicionar Numero de Telefone</button>
       </div>
     </div>
 
 
     <div class="w-100 bg-white px-3 py-4 px-5 rounded-4 d-flex flex-column gap-3">
-      <div class="d-flex align-items-center gap-2">
-        <i class="bi bi-envelope-at fs-3"></i>
+      <div class="d-flex align-items-center gap-2 ms-0">
+        <i class="material-icons fs-2">alternate_email</i>
         <span class="fs-5 fw-500">E-mails para Contato:</span>
       </div>
 
       <div>
         <!-- TABELA Email -->
-        <div class="border border-2 border-dark rounded-top-4  px-4 border-bottom-0">
-          <table mat-table [dataSource]="dataSourceEmail" class="mat-elevation-z8  shadow-none overflow-hidden">
+        <div class="rounded-top-4 px-4">
+          <table mat-table [dataSource]="dataSourceEmail" class="mat-elevation-z3 rounded overflow-hidden">
             <ng-container matColumnDef="Email">
               <th mat-header-cell *matHeaderCellDef> E-mail </th>
               <td mat-cell *matCellDef="let element"  >
-                 <input placeholder="Exemplo@exemplo.com" maxlength="300" class="reset-input w-100 " type="email" value="{{element.email}}" id="{{'email' +element.idEmail}}"  (change)="EditarEmail(element.idEmail)" required
-                email>
+                <mat-form-field appearance="outline">
+                  <input matInput placeholder="Exemplo@exemplo.com" maxlength="300" class="reset-input w-100 " type="email" value="{{element.email}}" id="{{'email' +element.idEmail}}"  (change)="EditarEmail(element.idEmail)" required email>
+                </mat-form-field>
                 <span id="{{'erroEmail' + element.idEmail}}" class='fs-very-small d-none error'>Email inválido! digite um email valido</span>
               </td>
             </ng-container>
 
             <ng-container matColumnDef="TipoContato">
               <th mat-header-cell *matHeaderCellDef> E-mail Principal </th>
-              <td mat-cell *matCellDef="let element"> <input  class="form-check-input" ngClass="" id="{{'emailPrincipal' + element.idEmail}}" type="radio" name="flexRadioEmail" [checked]="element.flPrincipal" (change)="EditaEmailPrincipal(element.idEmail)" value="{{element.flPrincipal}}"> </td>
+              <td mat-cell *matCellDef="let element">
+                <input class="form-check-input" ngClass="" id="{{'emailPrincipal' + element.idEmail}}" type="radio" name="flexRadioEmail" [checked]="element.flPrincipal" (change)="EditaEmailPrincipal(element.idEmail)" value="{{element.flPrincipal}}">
+              </td>
             </ng-container>
 
             <ng-container matColumnDef="Excluir">
               <th mat-header-cell *matHeaderCellDef> </th>
-              <td mat-cell *matCellDef="let element"> <button class="btn" (click)="RemoverEmail(element.idEmail, $event)"><i class="bi bi-trash fs-4"></i></button> </td>
+              <td mat-cell *matCellDef="let element"> <button class="btn" (click)="RemoverEmail(element.idEmail, $event)"><i class="text-danger material-icons fs-4">do_not_disturb</i></button> </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumnsEmail"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumnsEmail;"></tr>
           </table>
         </div>
-        <button class="btn w-100 border border-2 border-dark rounded-bottom-4 px-4 border-top-0 rounded-top-0 text-secondary text-start fs-very-small" (click)="AdicionarEmail(); $event.preventDefault()"> + Adicionar Endereço de E-mail</button>
+        <button class="btn w-100 px-4 text-secondary text-start fs-very-small mt-3" (click)="AdicionarEmail(); $event.preventDefault()"> + Adicionar Endereço de E-mail</button>
       </div>
 
 
     </div>
 
     <div class="w-100 bg-white px-5 py-4 rounded-4 d-flex flex-column gap-3" *ngIf="!editar; else EditarColaborador">
-      <div class="d-flex align-items-center gap-2">
-        <i class="bi bi-person-vcard fs-2"></i>
+      <div class="d-flex align-items-center gap-2 ms-0">
+        <i class="material-icons fs-2">lock</i>
         <span class="fs-5 fw-500">Informações Pessoais</span>
       </div>
-      <div class="row">
+      <div class="row w-100">
         <div class="col-4">
-          <div class="d-flex flex-column ">
-            <label class="fs-7" for="usuario">*Usuario:</label>
-            <input maxlength="300" class="form-control fundo-cinza py-2" type="text"  name="usuario" id="usuario" formControlName="usuario" placeholder="Ex: joao_santos" [readOnly]="editar">
+          <div class="d-flex flex-column">
+            <mat-label class="fs-7 ms-0 mb-2" for="usuario">*Usuario:</mat-label>
+            <mat-form-field  class="custom-input">
+              <input matInput maxlength="300" type="text"  name="usuario" id="usuario" formControlName="usuario" placeholder="Ex: joao_santos" [readOnly]="editar">
+            </mat-form-field>
           </div>
-          <span *ngIf="formulario?.get('usuario')?.hasError('required') && formulario.get('usuario')?.touched" class="text-danger fs-small">* O campo de usuario precisa ser preenchido</span>
+          <span *ngIf="formulario?.get('usuario')?.hasError('required') && formulario.get('usuario')?.touched" class="text-danger fs-small warn">* O campo de usuario precisa ser preenchido</span>
         </div>
 
         <div class="col-4">
           <div class="d-flex flex-column ">
-            <label class="fs-7" for="senha">*Senha:</label>
-            <input maxlength="300" formControlName="senha" class="form-control fundo-cinza py-2" type="password" name="senha" id="senha">
-            <span class="fs-very-small text-danger" *ngIf="formulario?.get('senha')?.hasError('required') && formulario.get('senha')?.touched">* O campo de nova senha é obrigatório.</span>
-            <span class="fs-very-small text-danger" *ngIf="formulario?.get('senha')?.hasError('erroCaractereEspecial') && formulario.get('senha')?.touched">* Sua nova senha precisa ter um caraterer especial</span>
-            <span class="fs-very-small text-danger" *ngIf="formulario?.get('senha')?.hasError('erroNumero') && formulario.get('senha')?.touched">* Sua nova senha deve conter um numero</span>
-            <span class="fs-very-small text-danger" *ngIf="formulario?.get('senha')?.hasError('erroMaiuscula') && formulario.get('senha')?.touched">* Sua nova senha deve conter uma letra maiuscula </span>
-            <span class="fs-very-small text-danger" *ngIf="formulario?.get('senha')?.hasError('minlength') && formulario.get('senha')?.touched">* Sua nova senha deve conter no minimo 8 caracteres </span>
-
+            <mat-label class="fs-7 ms-0 mb-2" for="senha">*Senha:</mat-label>
+            <mat-form-field class="custom-input">
+              <input matInput maxlength="300" formControlName="senha" class="" placeholder="nome@123" type="password" name="senha" id="senha">
+            </mat-form-field>
+            <span class="fs-very-small text-danger warn" *ngIf="formulario?.get('senha')?.hasError('required') && formulario.get('senha')?.touched">* O campo de nova senha é obrigatório.</span>
+            <span class="fs-very-small text-danger warn" *ngIf="formulario?.get('senha')?.hasError('erroCaractereEspecial') && formulario.get('senha')?.touched">* Sua nova senha precisa ter um caraterer especial</span>
+            <span class="fs-very-small text-danger warn" *ngIf="formulario?.get('senha')?.hasError('erroNumero') && formulario.get('senha')?.touched">* Sua nova senha deve conter um numero</span>
+            <span class="fs-very-small text-danger warn" *ngIf="formulario?.get('senha')?.hasError('erroMaiuscula') && formulario.get('senha')?.touched">* Sua nova senha deve conter uma letra maiuscula </span>
+            <span class="fs-very-small text-danger warn" *ngIf="formulario?.get('senha')?.hasError('minlength') && formulario.get('senha')?.touched">* Sua nova senha deve conter no minimo 8 caracteres </span>
           </div>
         </div>
 
         <div class="col-4">
           <div class="d-flex flex-column ">
-            <label class="fs-7" for="confirmarSenha">*Confirme a Senha:</label>
-            <input maxlength="300" class="form-control fundo-cinza py-2" type="password" name="confirmarSenha" formControlName="confirmarSenha" id="confirmarSenha">
+            <mat-label class="fs-7 ms-0 mb-2" for="confirmarSenha">*Confirme a Senha:</mat-label>
+            <mat-form-field class="custom-input">
+              <input matInput maxlength="300" type="password" name="confirmarSenha" placeholder="nome@123" formControlName="confirmarSenha" id="confirmarSenha">
+            </mat-form-field>
           </div>
-          <span *ngIf="formulario?.errors?.['erroSenhasDiferentes'] && formulario.get('confirmarSenha')?.touched" class="text-danger fs-small">* As senhas precisam ser iguais</span>
+          <span *ngIf="formulario?.errors?.['erroSenhasDiferentes'] && formulario.get('confirmarSenha')?.touched" class="text-danger fs-small warn">* As senhas precisam ser iguais</span>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-4">
+        <div class="col-5">
           <div class="d-flex flex-column ">
-            <label class="fs-7" for="perfil">*Perfil de acesso:</label>
+            <label class="fs-7 ms-0 mb-2" for="perfil">*Perfil de acesso:</label>
             <select class="form-select py-2" formControlName="perfil">
               <option value="1">Master</option>
               <option value="2">Padrão</option>
@@ -190,7 +209,7 @@
     <ng-template #EditarColaborador>
       <div  class="w-100 bg-white px-5 py-4 rounded-4 d-flex flex-column gap-3">
         <div class="d-flex align-items-center gap-2">
-          <i class="bi bi-person-vcard fs-2"></i>
+          <i class="material-icons fs-2">lock</i>
           <span class="fs-5 fw-500">Informações Pessoais</span>
         </div>
         <div class="row">
@@ -202,9 +221,9 @@
           </div>
 
           <div *ngIf="isMaster" class="col-4">
-            <div class="d-flex flex-column ">
+            <div class="d-flex flex-column">
               <label class="fs-7" for="perfil">Perfil de acesso:</label>
-              <select class="form-select py-2" formControlName="perfil">
+              <select matNativeControl required class="form-select" formControlName="perfil">
                 <option value="1">Master</option>
                 <option value="2">Padrão</option>
               </select>
@@ -235,7 +254,7 @@
     </ng-template>
 
     <div class="d-flex align-items-center justify-content-center">
-      <button [disabled]="formulario.invalid || ListaInvalidaEmail || ListaInvalidaTelefone" type="submit" class="btn btn-dark d-flex align-items-center px-3"><i class="bi bi-plus fs-3"></i> {{editar ? 'Salvar' : 'Cadastrar'}}</button>
+      <button mat-flat-button type="submit" class="btn btn-dark d-flex align-items-center px-3"><i class="bi bi-plus fs-3"></i> {{editar ? 'Salvar' : 'Cadastrar'}}</button>
     </div>
   </form>
 </main>

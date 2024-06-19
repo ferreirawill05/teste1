@@ -54,5 +54,38 @@ namespace MAC.MadeInCotia.Biz.Services
             return tokenHandler.WriteToken(token);
         }
 
+        //Requisições do Token
+        private static ClaimsIdentity GenerateClaims(CF_Colaborador usuario)
+        {
+            var newClaimIdentify = new ClaimsIdentity();
+
+
+            newClaimIdentify.AddClaim(new Claim(ClaimTypes.Name, usuario.Nm_Nome));
+
+            newClaimIdentify.AddClaim(new Claim("IdColaborador", usuario.Id_Colaborador.ToString()));
+
+            newClaimIdentify.AddClaim(new Claim("IdTipoUsuario", usuario.Id_TipoUsuario.ToString()));
+
+            foreach (var permissao in usuario.)
+            {
+
+                if (permissao.IdPermissao == 1)
+                {
+                    newClaimIdentify.AddClaim(new Claim("alterar", "1"));
+                }
+                if (permissao.IdPermissao == 2)
+                {
+                    newClaimIdentify.AddClaim(new Claim("cadastrar", "2"));
+                }
+                if (permissao.IdPermissao == 3)
+                {
+                    newClaimIdentify.AddClaim(new Claim("excluir", "3"));
+                }
+
+            }
+            return newClaimIdentify;
+
+        }
+
     }
 }

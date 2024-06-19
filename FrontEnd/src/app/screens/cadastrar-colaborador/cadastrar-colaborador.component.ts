@@ -41,7 +41,7 @@ export class CadastrarColaboradorComponent implements OnInit {
   isMaster : boolean = false
   editar : boolean = false
   emailInvalido : boolean = false
-  idColaborador! : number
+  idColaborador! : number 
   EmailCadastrados : EmailCadastro[] = []
   TelefoneCadastrados : TelefoneCadastro[] = []
   ListaInvalidaEmail : boolean = true

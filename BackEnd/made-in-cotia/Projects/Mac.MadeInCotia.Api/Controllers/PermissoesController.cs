@@ -9,7 +9,7 @@ namespace Mac.MadeInCotia.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PermissoesController : ControllerBase 
+    public class PermissoesController : BaseApiController 
     {
         private readonly PermissoesService _permissaoService;
 

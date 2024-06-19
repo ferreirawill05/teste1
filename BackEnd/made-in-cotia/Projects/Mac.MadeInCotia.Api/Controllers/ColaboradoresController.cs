@@ -1,16 +1,14 @@
-﻿using Mac.MadeInCotia.Data.Models;
-using Mac.MadeInCotia.Entities.Colaborador;
+﻿using Mac.MadeInCotia.Entities.Colaborador;
 using MAC.MadeInCotia.Biz.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace Mac.MadeInCotia.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ColaboradoresController : ControllerBase
+    public class ColaboradoresController : BaseApiController
     {
         private readonly ColaboradorService _colaboradorService;
 
@@ -18,6 +16,12 @@ namespace Mac.MadeInCotia.Api.Controllers
         {
             _colaboradorService = colaboradorService;
         }
+
+        /*public IActionResult GetMe()
+        {
+            int id = int.Parse(HttpContext.User.FindFirstValue("IdTipoUsuario"));
+            return CustomReturn(_colaboradorService.GetMe(id));
+        }*/
 
         [Authorize]
         [HttpGet("{id}")]

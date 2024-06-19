@@ -1,5 +1,10 @@
+using FluentValidation;
 using Mac.MadeInCotia.Data.Context;
+using Mac.MadeInCotia.Entities.Colaborador;
+using Mac.MadeInCotia.Entities.Emails;
+using Mac.MadeInCotia.Entities.Telefones;
 using MAC.MadeInCotia.Biz.Services;
+using MAC.MadeInCotia.Biz.Validators;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -59,6 +64,12 @@ public class Program
         {
             options.JsonSerializerOptions.ReferenceHandler = null;
         });
+
+        //Validators
+        builder.Services.AddScoped<IValidator<ColaboradorViewModel>, UsuarioValidator>();
+        builder.Services.AddScoped<IValidator<TelefonesViewModel>, TelefoneValidation>();
+        builder.Services.AddScoped<IValidator<EmailsViewModel>, EmailValidation>();
+        builder.Services.AddScoped<IValidator<ColaboradorAlterarSenhaViewModel>, SenhaValidation>();
 
         // Database context
         builder.Services.AddDbContext<MacMadeInCotiaContext>(options =>

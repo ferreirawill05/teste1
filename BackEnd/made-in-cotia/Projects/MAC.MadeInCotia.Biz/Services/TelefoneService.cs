@@ -1,14 +1,18 @@
 ﻿using Dapper;
+using FluentValidation;
 using Mac.MadeInCotia.Data.Context;
 using Mac.MadeInCotia.Data.Models;
 using Mac.MadeInCotia.Entities.Telefones;
+using MAC.MadeInCotia.Biz.Validators;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using System.ComponentModel.DataAnnotations;
 
 namespace MAC.MadeInCotia.Biz.Services
 {
     public class TelefoneService
     {
+        private readonly TelefoneValidation _validation = new();
         private readonly IConfiguration _configuration;
         private readonly MacMadeInCotiaContext _context;
 
@@ -55,20 +59,29 @@ namespace MAC.MadeInCotia.Biz.Services
             }
         }
 
-        public TelefonesViewModel CriarTelefone (TelefonesViewModel telefone)
+        public TelefonesViewModel CriarTelefone(TelefonesViewModel telefone)
         {
-            CF_ColaboradorTelefone colaboradorTelefone = new CF_ColaboradorTelefone
-            (
-                telefone.IdColaborador,
-                telefone.NmApelido,
-                telefone.DsNumero,
-                true,
-                true,
-                DateTime.Now
-            );
-            _context.CF_ColaboradorTelefone.Add(colaboradorTelefone);
-            _context.SaveChanges();
-            return(telefone);
+            TelefoneValidation TValidation = new TelefoneValidation();
+            ValidationResult resultado = _validation.Validate(telefone);
+
+            if (!resultado.IsValid)
+            {
+                CF_ColaboradorTelefone colaboradorTelefone = new CF_ColaboradorTelefone
+                (
+                    telefone.IdColaborador,
+                    telefone.NmApelido,
+                    telefone.DsNumero,
+                    true,
+                    true,
+                    DateTime.Now
+                );
+
+                _validation.ValidateAndThrow(telefone);
+                _context.CF_ColaboradorTelefone.Add(colaboradorTelefone);
+                _context.SaveChanges();
+                telefone.DsNumero = string.Empty;
+            }
+            return (telefone);
         }
 
         public TelefonesViewModel DeletarTelefone(TelefonesViewModel telefone)

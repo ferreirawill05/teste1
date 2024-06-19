@@ -1,3 +1,6 @@
+export interface numero{
+  numero: number
+}
 
 export interface Colaboradores {
 idColaborador:     number;
@@ -11,6 +14,7 @@ colaboradores : Colaboradores[];
 }
 
 export interface ColaboradorListado {
+  numero: any;
   colaboradores : Colaboradores[];
   quantidade : number
 }

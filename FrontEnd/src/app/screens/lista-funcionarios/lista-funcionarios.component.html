@@ -11,24 +11,26 @@
             <div class="d-flex flex-row align-items-center">
                 <mat-form-field class="input-sizing">
                   <mat-date-range-input [rangePicker]="picker">
-                    <input matStartDate placeholder="DD/MM/YYYY">
-                    <input matEndDate placeholder="DD/MM/AAAA">
+                    <input matStartDate placeholder="DD/MM/YYYY" [(ngModel)]="dataInicial">
+                    <input matEndDate placeholder="DD/MM/AAAA" [(ngModel)]="dataFinal">
                   </mat-date-range-input>
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <button mat-mini-fab matSuffix (click)="ListandoColaboradores()" class="text-white me-2" type="submit">
+                    <mat-icon class="material-icons">calendar_month</mat-icon>
+                  </button>
+                  <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
                   <mat-date-range-picker #picker></mat-date-range-picker>
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field class="input-sizing">
                   <div class="d-flex flex-row align-items-center">
-                    <input matInput placeholder="Busca por nome, cpf, e-mail, telefone ou criador" type="text" class="">
-                    <button class="search" type="submit">
+                    <input (change)="!pesquisa && ListandoColaboradores()" matInput placeholder="Busca por nome, cpf, e-mail, telefone ou criador" type="text" [(ngModel)]="pesquisa">
+                    <button (click)="ListandoColaboradores()" class="search" type="submit">
                       <span class="material-icons">search</span>
                     </button>
                   </div>
                 </mat-form-field>
             </div>
-
         </div>
         <div class="filter-button">
             <button mat-flat-button color="primary" (click)="FiltroRecentes()">Mais Recentes</button>
