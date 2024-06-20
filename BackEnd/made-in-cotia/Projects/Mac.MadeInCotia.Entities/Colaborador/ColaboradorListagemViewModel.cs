@@ -14,7 +14,7 @@
         }
 
         public int IdColaborador {  get; set; }
-        public string Nome { get; set; } = null!;
+        public string Nome { get; set; } = null!; 
         public string CPF { get; set; } = null!;
         public string TelefonePrincipal { get; set; } = null!;
         public string EmailPrincipal { get; set; } = null!;

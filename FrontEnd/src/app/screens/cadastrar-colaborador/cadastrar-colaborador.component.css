@@ -56,3 +56,8 @@ body{
 .warn{
   font-size: 13px;
 }
+
+.mat-mdc-unelevated-button:not(:disabled){
+  color: white;
+  background-color: black;
+}

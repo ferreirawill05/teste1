@@ -1,18 +1,12 @@
 ﻿using Mac.MadeInCotia.Data.Models;
 using Mac.MadeInCotia.Entities.Colaborador;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MAC.MadeInCotia.Biz.Converter
 {
     public static class ConverterColaboradorListagem
-    {
+    { 
         public static ColaboradorListagemViewModel Converter(CF_Colaborador colaborador)
         {
-
             CF_ColaboradorEmail email = colaborador.CF_ColaboradorEmail.FirstOrDefault(e => e.Fl_Principal);
             CF_ColaboradorTelefone telefone = colaborador.CF_ColaboradorTelefone.FirstOrDefault(t => t.Fl_Principal);
             string telefoneColaborador = telefone != null ? telefone.Ds_Numero : string.Empty;
@@ -31,6 +25,4 @@ namespace MAC.MadeInCotia.Biz.Converter
             return listaFormatada;
         }
     }
-
-    
 }

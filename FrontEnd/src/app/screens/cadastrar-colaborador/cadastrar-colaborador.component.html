@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<main class="container py-4 d-flex flex-column gap-4 ">
+<main class="container py-4 d-flex flex-column gap-4 align-items-center">
   <form class="d-flex col-10 gap-4 flex-column" [formGroup]="formulario" (submit)="editar ? AlterarColaborador($event) : CadastrarColaborador($event)">
     <h2 class="fs-2 fw-600">{{editar ? 'Editar Colaborador' : 'Cadastrar Colaborador'}}</h2>
 

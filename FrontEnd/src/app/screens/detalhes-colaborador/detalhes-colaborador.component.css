@@ -57,3 +57,10 @@ body{
 .mdc-data-table__table {
     min-width: 81%;
 }
+
+.mat-mdc-unelevated-button:not(:disabled){
+  color: white;
+  background-color: black;
+}
+
+

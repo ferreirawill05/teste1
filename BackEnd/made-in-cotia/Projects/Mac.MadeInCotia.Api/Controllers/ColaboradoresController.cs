@@ -1,7 +1,10 @@
-﻿using Mac.MadeInCotia.Entities.Colaborador;
+﻿using Mac.MadeInCotia.Data.Models;
+using Mac.MadeInCotia.Entities.Colaborador;
 using MAC.MadeInCotia.Biz.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
 namespace Mac.MadeInCotia.Api.Controllers
@@ -17,10 +20,28 @@ namespace Mac.MadeInCotia.Api.Controllers
             _colaboradorService = colaboradorService;
         }
 
-        /*public IActionResult GetMe()
+        /*[HttpGet("GetMe")]
+        [Authorize] // Garante que somente requisições autenticadas possam acessar este método
+        public IActionResult GetMe()
         {
-            int id = int.Parse(HttpContext.User.FindFirstValue("IdTipoUsuario"));
-            return CustomReturn(_colaboradorService.GetMe(id));
+            // Recuperando o ID do colaborador do Claim no token JWT
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity != null)
+            {
+                var userClaims = identity.Claims;
+                var colaboradorId = userClaims.FirstOrDefault(c => c.Type == "IdColaborador")?.Value;
+
+                if (!string.IsNullOrEmpty(colaboradorId))
+                {
+                    var colaborador = _context.Find(int.Parse(colaboradorId));
+                    if (colaborador != null)
+                    {
+                        return Ok(colaborador); // Retorna os dados do colaborador
+                    }
+                    return NotFound("Colaborador não encontrado.");
+                }
+            }
+            return BadRequest("ID do colaborador não encontrado no token.");
         }*/
 
         [Authorize]
@@ -79,7 +100,6 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(usuario);
         }
 
- 
         [HttpPut("/atualizarSenha")]
         public IActionResult UpdatePassword(ColaboradorAlterarSenhaViewModel colaborador)
         {
@@ -87,7 +107,6 @@ namespace Mac.MadeInCotia.Api.Controllers
             return Ok(senhaUsuario);
         }
 
-        
         /* ----- filtros -----*/
 
         /*Filtro mais recentes*/
@@ -132,6 +151,5 @@ namespace Mac.MadeInCotia.Api.Controllers
 
             return Ok(usuarios);
         }
-
     }
 }

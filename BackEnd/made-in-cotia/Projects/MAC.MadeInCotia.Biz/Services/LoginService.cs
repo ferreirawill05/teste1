@@ -41,7 +41,7 @@ namespace MAC.MadeInCotia.Biz.Services
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.Name, user.Nm_Nome),
+                    new Claim(ClaimTypes.Name, user.Nm_Usuario),
                     new Claim(ClaimTypes.Role, "master"),
                     new Claim("IdColaborador", user.Id_Colaborador.ToString()),
                     new Claim("IdPermissaoColaborador", user.Id_TipoUsuario.ToString())
@@ -54,21 +54,6 @@ namespace MAC.MadeInCotia.Biz.Services
             return tokenHandler.WriteToken(token);
         }
 
-        //Requisições do Token
-        /*private static ClaimsIdentity GenerateClaims(CF_Colaborador usuario)
-        {
-            var newClaimIdentify = new ClaimsIdentity();
-
-
-            newClaimIdentify.AddClaim(new Claim(ClaimTypes.Name, usuario.Nm_Nome));
-
-            newClaimIdentify.AddClaim(new Claim("IdColaborador", usuario.Id_Colaborador.ToString()));
-
-            newClaimIdentify.AddClaim(new Claim("IdTipoUsuario", usuario.Id_TipoUsuario.ToString()));
-
-           
-
-        }*/
 
     }
 }

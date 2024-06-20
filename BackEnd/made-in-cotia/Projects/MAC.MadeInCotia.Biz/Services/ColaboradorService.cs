@@ -262,6 +262,8 @@ namespace MAC.MadeInCotia.Biz.Services
             var listaColaboradores = ConverterColaboradorListagem.Converter(query.ToList());
             return new ColaboradorResponse(listaColaboradores, qtdColaboradores);
         }
+
+
     }
      
 }
